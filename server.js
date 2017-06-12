@@ -14,11 +14,12 @@
 var express = require('express')
 const app = express()
 
-// app.use("/FE-Learn",express.static('/Users/macbook/work-git/FE-Learn'))
-app.listen(6060,function (err) {
+//static中的/Users/wuage/work-git/FE-Learn为项目的全路径，use的第一个参数可以不写，然后访问：http://127.0.0.1:7666/pages/src/view/index.html就可以了
+app.use(express.static('/Users/wuage/work-git/FE-Learn'))
+app.listen(7666,function (err) {
 	if(err){
 		console.log(err);
 		return
 	}
-	console.log("Listening at http://127.0.0.1:6060");
+	console.log("Listening at http://127.0.0.1:7666");
 })
