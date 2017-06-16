@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展开-收起简化版</title>
+    <link rel="stylesheet" href="https://static.wuage.com/common/lib/reset.css?v=2017345345345"/>    
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a:link,
+        a:visited {
+            color: #656565;
+        }
+        a:hover {
+            color: #316ccb;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        a.fe-blue {
+            color: #316ccb;
+        }
+        a.fe-blue:hover {
+            color: #407fe7;
+        }
+        button {
+            background: #fff;
+            cursor: pointer;
+        }
+        .fe-left {
+            float: left;
+            display: inline;
+        }
+        .fe-right {
+            float: right;
+        }
+        .fe-clear {
+            *zoom: 1;
+        }
+        .fe-clear:after {
+            display: block;
+            clear: both;
+            width: 0px;
+            height: 0px;
+            content: " ";
+        }
+        .fe-relatedGoods {
+            width: 1184px;
+            margin: 0 auto;
+            margin-top: 24px;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 24px;
+        }
+        .fe-relatedGoods .related-title {
+            font-size: 12px;
+            color: #959595;
+            width: 68px;
+        }
+        .fe-relatedGoods .related-list {
+            width: 996px;
+            max-height: 70px;
+            transition: all 0.2s linear;
+            overflow: hidden;
+        }
+        .fe-relatedGoods .related-list .related-option-item {
+            width: 237px;
+            margin-right: 12px;
+            margin-bottom: 8px;
+        }
+        .fe-relatedGoods .related-list .related-option-item:last-child {
+            margin-right: 0;
+        }
+        .fe-relatedGoods .related-control {
+            text-align: right;
+        }
+        .fe-relatedGoods .related-control button {
+            margin: 6px 0px 6px 24px;
+            width: 48px;
+            height: 24px;
+            line-height: 22px;
+            color: #959595;
+            border: 1px solid #e5e5e5;
+            display: block;
+        }
+        .fe-relatedGoods .related-control button:hover {
+            color: #316ccb;
+            border-color: #316ccb;
+        }
+        .fe-relatedGoods .related-control .related-options-close {
+            display: none;
+        }
+        .fe-relatedGoods .related-control .related-options-expand .fe-arrow-icon-bottom {
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            width: 7px;
+            height: 5px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAG1BMVEUAAAD6+vrOzs7FxcXT09PQ0ND8/PzX19fc3NyfRzoVAAAAAXRSTlMAQObYZgAAADtJREFUCNdjgAN2RxCZ3sDAYiTAwMDmHMDAqKzIwJAC4gkZCTAGAzkgIVGQAEgIJAAWAgqAgYgjAxIAACpLBdK/RcObAAAAAElFTkSuQmCC);
+            background-size: 7px 5px;
+            animation: rotateBack 0.2s;
+            transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+        }
+        .fe-relatedGoods .related-control .related-options-close .fe-arrow-icon-bottom {
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            width: 7px;
+            height: 5px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAKBAMAAABPkMOvAAAAG1BMVEUAAAD6+vrOzs7FxcXT09PQ0ND8/PzX19fc3NyfRzoVAAAAAXRSTlMAQObYZgAAADtJREFUCNdjgAN2RxCZ3sDAYiTAwMDmHMDAqKzIwJAC4gkZCTAGAzkgIVGQAEgIJAAWAgqAgYgjAxIAACpLBdK/RcObAAAAAElFTkSuQmCC);
+            background-size: 7px 5px;
+            animation: rotate 0.2s;
+            transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+        }
+        .fe-relatedGoods.related-operate .related-list {
+            max-height: 148px;
+            visibility: visible;
+        }
+        .fe-relatedGoods.related-operate .related-control .related-options-expand {
+            display: none;
+        }
+        .fe-relatedGoods.related-operate .related-control .related-options-close {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="fe-relatedGoods" id="relatedArea" psa="a169">
+        <div class="part-related fe-clear">
+            <div class="related-title fe-left">
+                <label>相关产品</label>
+            </div>
+            <ul class="related-list fe-left">
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+                <li class="related-option-item fe-left">
+                    <a href="https://www.baidu.com">冷轧无取向硅钢&nbsp;&nbsp;50SW350W&nbsp;&nbsp;首钢</a>
+                </li>
+            </ul>
+            <div class="related-control fe-right fe-clear">
+                <button class="style-btn related-options-expand fe-right" toogle>
+                    <span class="expand-text">展开</span>
+                    <span class="fe-arrow-icon-bottom"></span>
+                </button>
+                <button class="style-btn related-options-close fe-right" toogle>
+                    <span class="expand-text">收起</span>
+                    <span class="fe-arrow-icon-bottom"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+<script>
+    function relatedProduct(div){
+        div.find("[toogle]").on('click',function(e){
+            var isActive = div.hasClass('related-operate')
+            if(isActive){
+                div.removeClass('related-operate');
+            }else{
+                div.addClass('related-operate');
+            }
+        })
+    }
+    relatedProduct($("#relatedArea"))
+</script>
+</body>
+</html>
