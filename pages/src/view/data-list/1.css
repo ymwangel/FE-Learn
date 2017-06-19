@@ -140,9 +140,9 @@
 			max-height: 184px;
 			visibility: visible;
 		}
-		.sn-list-expand .company-list .choosed-item{
+		/*.sn-list-expand .company-list .choosed-item{
 			display: none;
-		}
+		}*/
 		.sn-list-expand .list-control .closed{
 			display: block;
 		}
