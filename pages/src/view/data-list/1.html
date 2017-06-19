@@ -3,156 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>data-list</title>
-	<style>
-		*{
-			padding: 0;
-			margin: 0;
-			font-family: -apple-system,BlinkMacSystemFont,Hiragino Sans GB,Microsoft YaHei,sans-serif;
-		}
-		ul,ol{
-			list-style: none;
-		}
-		a{
-			text-decoration: none;
-		}
-		a:hover{
-			color: #316ccb;
-		}
-		.fl{
-			float: left;
-		}
-		.fr{
-			float: right;
-		}
-		.clearfix{
-			zoom: 1
-		}
-		.clearfix:after{
-			content: "";
-			display: block;
-			clear: both;
-			height: 0;
-		}
-		.layout-sn{
-			width: 1184px;
-			margin: 0 auto;
-			background-color: #f5f5f5;
-		}
-		.mod-sn{
-			width: 100%;
-			padding: 24px;
-			font-size: 16px;
-			overflow: hidden;
-			line-height: 35px;
-		}
-		.mod-sn .sn-title{
-			color: #959595;
-			width: 70px;
-			margin-right: 12px;
-			font-size: 12px;
-		}
-		.mod-sn .company-list{
-			width: 916px;
-            max-height: 35px;
-            transition: all 0.2s linear;
-            overflow: hidden;
-            font-size: 12px;
-		}
-		.mod-sn .company-list .list-item{
-			display: inline-block;
-			width: 100px;
-			padding-right: 24px;
-			color: #656565;
-		}
-		.mod-sn .list-contol{
-			text-align: right;
-			font-size: 12px;
-		}
-		.mod-sn .list-control button{
-			margin: 6px 0 6px 24px;
-    		width: 48px;
-    		height: 24px;
-    		line-height: 22px;
-   			color: #959595;
-    		border: 1px solid #e5e5e5;
-    		display: inline-block;
-    		background-color: white;
-		}
-		.mod-sn .list-control button:hover{
-			color: #316ccb;
-			border-color: #316ccb;
-		}
-		.mod-sn .list-control .closed{
-			display: none;
-		}
-		.sn-list-expand{
-			
-		}
-		.sn-list-expand .company-list{
-			max-height: 184px;
-			visibility: visible;
-		}
-		.sn-list-expand .list-control .closed{
-			display: block;
-		}
-		.sn-list-expand .list-control .expand{
-			display: none;
-		}
-		.sn-list-expand .list-control .check-more{
-			display: none;
-		}
-		.sn-list-more .company-list{
-			max-height: 184px;
-			visibility: visible;
-		}
-	
-		.sn-list-more .list-control .expand{
-			display: none;
-		}
-		.sn-list-more .list-control .check-more{
-			display: none;
-		}
-		.mod-sn .choosedItem{
-			font-size: 12px;
-			color: #656565;
-		}
-,	</style>
+	<link rel="stylesheet" href="./1.css">
 </head>
 <body>
 	<div class="layout-sn">
-		<div class="mod-sn clearfix">
+		<div class="mod-sn">
 			<div class="sn-title fl">厂家</div>
-			<ul class="company-list fl">
-				<li class="list-item"><label><input type="checkbox" name="company" value="shandong">山东</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="hebeijuchi">河北聚驰</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="baogang">宝钢</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="wuxi">无锡</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="tiangang">天钢</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="tianguan">天管</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="tianjin">天津</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="boxunshiye">博讯实业</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="henggang">衡钢</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="youfa">友发</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="hengyang">衡阳</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="jinjun">金骏</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="dingxin">鼎信</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="chengdu">成都</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="angang">鞍钢</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="taigang">太钢</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="本厂">本厂</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="tianjingangguan">天津钢管</label></li>
-				<li class="list-item"><label><input type="checkbox" name="company" value="xinyegang">新冶钢</label></li>
-			</ul>
-			<div class="list-control fr clearfix">
+			<div class="company-list fl">
+				<ul>
+					<li class="list-item"><label><input type="checkbox" name="company" value="shandong">山东</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="hebeijuchi">河北聚驰</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="baogang">宝钢</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="wuxi">无锡</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="tiangang">天钢</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="tianguan">天管</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="tianjin">天津</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="boxunshiye">博讯实业</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="henggang">衡钢</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="youfa">友发</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="hengyang">衡阳</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="jinjun">金骏</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="dingxin">鼎信</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="chengdu">成都</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="angang">鞍钢</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="taigang">太钢</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="benchang">本厂</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="tianjingangguan">天津钢管</label></li>
+					<li class="list-item"><label><input type="checkbox" name="company" value="xinyegang">新冶钢</label></li>
+				</ul>
+				<div class="choosed-item">
+					<label class="choosed-label">已选材质:</label>
+					<ul class="choosed-list" id="choosedList">
+					</ul>
+					<div class="button-operate">
+						<button class="confirm">确定</button>
+					<button class="cancel">取消</button>
+					</div>
+				</div>
+			</div>
+			<div class="list-control fl">
 				<button class="check-more" more>多选+</button>
 				<button class="expand" toogle>展开</button>
 				<button class="closed" toogle>收起</button>
 			</div>
-			<div class="choosedItem">
-				<label class="choosed-label">已选材质</label>
-				<ul class="choosedList"></ul>
-			</div>
+			
 		</div>
+	
 	</div>
 	<script src="../../../../lib/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript">
@@ -161,6 +57,7 @@
 		}())
 
 		function operate(div){
+			/*展开／收起click*/
 			div.find("[toogle]").on("click",function(e){
 				var isActive = div.hasClass("sn-list-expand")
 				if(isActive){
@@ -168,15 +65,43 @@
 				}else{
 					div.addClass("sn-list-expand")
 				}
-				
 			})
+			/*多选+click*/
 			div.find("[more]").on("click",function(e){
 				var isActive = div.hasClass("sn-list-more")
 				if(isActive){
 					div.removeClass("sn-list-more")
 				}else{
 					div.addClass("sn-list-more")
+
 				}
+			})
+			/*多选列表中多选框的clik事件*/
+			div.find(".list-item").on("click","input",function(e){
+				var index = $(this).closest(".list-item").index()
+				var isSelected = $(this).is(':checked')
+				var length = $(":checked").length
+				if(length==3){
+					$("input:not(:checked)").each(function(){
+						$(this).attr("disabled","disabled")
+					})
+				}else{
+					$("input:not(:checked)").each(function(){
+						$(this).removeAttr("disabled")
+					})
+				}
+				if(isSelected){
+					div.find(".choosed-item > .choosed-list").append("<li class='selected-item' index="+index+">"+$(this).attr("value")+"<span class='cancel-choosed'> X</span></li>")
+				}else{
+					var a = '[index='+index+']'
+					div.find(".choosed-item > .choosed-list").find(a).remove()
+				}
+			})
+			/*已选列表中X的click事件*/
+			div.find(".choosed-list").delegate(".selected-item > .cancel-choosed","click",function(e){
+				$(this).closest(".selected-item")[0].remove()
+				debugger
+				var index = $(this).closest(".selected-item")[0].attr("index")
 			})
 		}
 		
