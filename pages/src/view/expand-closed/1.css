@@ -1,0 +1,19 @@
+.mod-check{
+	margin-top: 20px;
+	margin-left: 100px;
+}
+.mod-check .list-component{
+	list-style: none;
+}
+.mod-check .list-component .list-item{
+	width: 300px;
+	height:48px;
+	line-height: 48px;
+	padding-left: 20px;
+}
+.mod-check .list-component .list-item:nth-child(2n+1){
+	background-color: rgb(245,245,245);
+}
+.mod-check .list-component .list-item input{
+	margin-left: 10px;
+}

@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>FE-Learn index</title>
+	<title>vue-router应用</title>
 </head>
 <body>
-	<div class="layout-test">
-		
+	<div id="app">
+		<h1>hello app!</h1>
+		<p>
+			<router-link to="/foo">go to foo</router-link>
+			<router-link to="/bar">go to bar</router-link>
+		</p>
+		<router-view></router-view>
 	</div>
-	
 	<script src="../../../lib/jquery-3.2.1.min.js"></script>
 	<script src="../js/index.js"></script>
+
 </body>
 </html>

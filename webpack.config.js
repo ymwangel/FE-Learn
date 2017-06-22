@@ -1,12 +1,27 @@
 var webpack = require("webpack")
+var path = require('path')
 
 module.exports = {
-	entery:'../pages/src/js/index.js',
+	entry:'./pages/src/js/index.js',
 	output:{
-		path: '../pages/dist/index.js',
-		filename:'[name].build.js'
+		path: path.resolve(__dirname, './pages/src/dist'),
+		filename:'[name].js'
 	},
 	module:{
-		
+		loaders:[
+			{test: /\.vue$/, loader: 'vue'},
+			{
+				test: /\.js$/,
+				exclude: /node_modules|vue\/dist|vue-router\/|vue-loader\//,
+				loader: 'babel-loader',
+				query: {
+					presets: ['es2015']
+				}
+			},
+			{
+				test:/\.css$/,
+				loaders: ["style-loader","css-loader"]
+			}
+		]
 	}
 }
