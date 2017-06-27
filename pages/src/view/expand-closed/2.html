@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.welcome{
+			margin-left: 20px;
+		}
+		.choose{
+			margin-left: 20px;
+		}
+		.mod-check{
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		.mod-check .list-component{
+			list-style: none;
+		}
+		.mod-check .list-component .list-item{
+			width: 300px;
+			height:48px;
+			line-height: 48px;
+			padding-left: 20px;
+		}
+		.mod-check .list-component .list-item:nth-child(2n+1){
+			background-color: rgb(245,245,245);
+		}
+		.mod-check .list-component .list-item input{
+			margin-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="welcome">您好，欢迎您</h2>
+	<h5 class="choose">选择业务</h5>
+	<div class="mod-check"> 
+        <ul class="list-component">
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;宽带新装</label></li>
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;IPTV加装</label></li>
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;手机购买</label></li>
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;套餐办理</label></li>
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;流量订购</label></li>
+            <li class="list-item"><label><input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;充值缴费</label></li>
+
+        </ul>        
+    </div>
+</body>
+</html>
