@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css动画实现文字逐个显示</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.welcome{
+			width: 800px;
+			height: 70px;
+			font-size: 50px;
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			
+		}
+		.content{
+			width:800px;
+			margin-left: 800px;
+			transition:  3s margin-left linear;
+		}
+		.show{
+			margin-left: 0px;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="welcome">
+		<div class="content">Welcome to ymwangel's website!</div>
+	</div>
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		(function () {
+			showWelcome($(".content"))
+		})()
+		function showWelcome(div){
+			div.addClass("show")
+		}
+	</script>
+</body>
+</html>

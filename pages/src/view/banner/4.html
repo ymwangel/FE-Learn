@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遮罩--css动画实现文字逐个显示</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.cover{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: blue;
+			filter: alpha(opacity=80);
+			opacity: 0.8;
+			color: #fff;
+		}
+		.welcome{
+			width: 800px;
+			height: 70px;
+			font-size: 50px;
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			
+		}
+		.content{
+			width: 800px;
+			margin-left: 800px;
+			transition:  5s margin-left linear;
+		}
+		.show{
+			margin-left: 0px;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="cover">
+		<div class="welcome">
+			<div class="content">Welcome to ymwangel's website!</div>
+		</div>
+	</div>
+	<div class="banner">
+		<a href="http://wwww.baidu.com">wewe</a>
+		<img class="active" src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="1">
+	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="2">
+	    <img src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="3">
+	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="4">
+	    
+	</div>	
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		(function () {
+			showWelcome($(".content"))
+		})()
+		function showWelcome(div){
+			div.addClass("show")
+		}
+	</script>
+</body>
+</html>

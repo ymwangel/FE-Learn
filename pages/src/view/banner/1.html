@@ -23,35 +23,39 @@
 		.none{
 			display: none;
 		}
+		
 
 	</style>
 </head>
 <body>
-	<div class="banner">
+	
+	<!-- <div class="banner">
 		<img class="active" src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="1">
 	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="2">
 	    <img src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="3">
 	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="4">
 	    
-	</div>
+	</div> -->
 
 	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
 	<script>
 		(function () {
-			var _banner = $(".banner");
-			var length = _banner.find("img").length;
-			setInterval(function(){
-				var nextEl = _banner.find(".active").next()
-				_banner.find(".active").removeClass("active")
-				if(nextEl.length>0){
-					nextEl.addClass("active")
-				}else{
-					nextEl = _banner.find("img:first-child")
-					nextEl.addClass("active")
-				}
+			// var _banner = $(".banner");
+			// var length = _banner.find("img").length;
+			// setInterval(function(){
+			// 	var nextEl = _banner.find(".active").next()
+			// 	_banner.find(".active").removeClass("active")
+			// 	if(nextEl.length>0){
+			// 		nextEl.addClass("active")
+			// 	}else{
+			// 		nextEl = _banner.find("img:first-child")
+			// 		nextEl.addClass("active")
+			// 	}
 				
-			},1000)
+			// },1000)
+
 		})()
+		
 	</script>
 </body>
 </html>
