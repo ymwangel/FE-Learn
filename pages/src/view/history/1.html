@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>History对象</title>
+</head>
+<body>
+	<a href="http://www.baidu.com"></a>
+	<script>
+		/*history属性*/
+		var len = history.length //先后访问网址的数量
+
+		/*history对象方法*/
+		history.back()  //移动到上一个访问页面，等同于浏览器的后推荐
+		history.forward() // 移动到下一个访问页面，等同意浏览器的前进键
+		history.go() //接受一个整数作为参数，移动到该整数指定的页面。
+		history.go(-1) // 相当于back()
+
+		//如果移动的位置超出了访问历史记录的边界，以上三个方法都不会报错，而是默默的失败
+		history.go(0) //相当于刷新当前页面
+
+		// 例如：常见的返回上一页链接，代码：
+		document.getElementById("backLink").onclick = function () {
+			window.history.back();
+		}
+	</script>
+	
+</body>
+</html>

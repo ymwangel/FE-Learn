@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封装的ajax</title>
+</head>
+<body>
+<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+<script>
+	(function(){
+    var type = "get"
+    var url = "http://www.w3school.com.cn/tiy/t.asp?f=jquery_ajax2"
+    data = {
+      
+    }
+    getDatas(type,url,data,function() {
+      console.log(arguments)
+    })
+
+		function getDatas(type,url,data,callback) {
+	    $.ajax({type:type,
+	      url:url,
+	      data:data,
+	      dataType:"text"
+	    }).then(function(data,status){
+	      console.log("success")
+        callback(data)
+	    },function(error){
+	      console.log("failed")
+        callback(error)
+	    })
+	  }
+	})()
+</script>
+
+	
+</body>
+</html>
