@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Promise</title>
+</head>
+<body>
+	
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		var promise = new Promise(function(resolve,reject) {
+			if(/*异步操作成功*/){
+				resolve(value);
+			}else{
+				reject(error)
+			}
+		})
+		promise.then(function(value){
+			//success
+		},function(error){
+			//failure
+		})
+
+		/*promise例子*/
+		var getJSON = function(url) {
+	  var promise = new Promise(function(resolve, reject){
+	    var client = new XMLHttpRequest();
+	    client.open("GET", url);
+	    client.onreadystatechange = handler;
+	    client.responseType = "json";
+	    client.setRequestHeader("Accept", "application/json");
+	    client.send();
+
+	    function handler() {
+	      if (this.status === 200) {
+	        resolve(this.response);
+	      } else {
+	        reject(new Error(this.statusText));
+	      }
+	    };
+	  });
+
+		  return promise;
+		};
+
+		getJSON("/posts.json").then(function(json) {
+		  console.log('Contents: ' + json);
+		}, function(error) {
+		  console.error('出错了', error);
+		});
+
+    /*链式操作：调用多个then（）*/
+    getJSON("/posts.json").then().then()
+
+    /*Promise.prototype.catch()*/
+    var promise = new Promise(function(resolve, reject) {
+      resolve("ok");
+      throw new Error('test');
+    });
+    promise
+    .then(function(value) { console.log(value) })
+    .catch(function(error) { console.log(error) });
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片放大缩小动画</title>
+	<style>
+		.img-area{
+			width: 200px;
+			height: 200px;
+			margin: 20px auto;
+			overflow: hidden;
+		}
+		img{
+			width: 200px;
+			height: 200px;
+			transition: 1s linear;
+		}
+		img:hover{
+			transform: scale(1.5);
+			transition: transform 1s ease;
+		}
+	</style>
+</head>
+<body>
+	<div class="img-area">
+		<img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="">
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery的ajax</title>
+</head>
+<body>
+	
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		(function() {
+			//get. :有缓存
+			$.get("http://www.baidu.com?name=lemoo",function(data,status){
+				console.log("Data:"+data+"\nStatus:"+status)
+			})
+
+			//post. :没有缓存
+			var data = {
+				name:"lemoo"
+			}
+			$.post("http://www.baidu.com",data,function(data){
+				console.log(data);
+			})
+
+			//ajax: 默认为get
+			$.ajax({
+				type:"post",
+				url:"http://www.baidu.com",
+				data:{num:123},
+				dataType:"text",
+				async:false, //false:同步执行，默认为true：异步执行
+				success:function(data){
+					console.log(data)
+				}
+			})
+
+			//getJSON,使用$.each搭配来遍历数据
+			$.getJSON("http://www.baidu.com",function(data){
+				$.each(data,function(index,sport){
+					console.log(1)
+				})
+			})
+
+			$.ajax({type:"post",
+				url:"http://www.baidu.com",
+				data:{num:123},
+				dataType:"text"
+			}).then(function(data,status){
+				console.log(status)
+				console.log("success")
+			},function(error){
+				console.log("failed")
+			})
+
+
+
+
+
+
+
+
+
+		})()
+	</script>
+</body>
+</html>
