@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>print</title>
+</head>
+<body>
+	<h2>jquery print</h2>
+	<ul class="list">
+		<li class="list-item">list-item</li>
+		<li class="list-item">list-item</li>
+		<li class="list-item">list-item</li>
+		<li class="list-item">list-item</li>
+	</ul>
+	<button class="print" print>打印</button>
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script src="./jquery-print.js"></script>
+	<script>
+		(function() {
+			main()
+		})()
+		function main() {
+			$("[print]").on("click",function(argument) {
+				$(".list").printArea()
+			})
+		}
+	</script>
+
+</body>
+</html>
