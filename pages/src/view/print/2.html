@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>print--封装</title>
+</head>
+<body>
+  <ul class="list" list>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+  </ul> 
+  <button print>打印</button>
+
+<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+<script>
+  (function () {
+    main($("[list]"))
+    function main(div){
+      $('[print]').on("click",function(){
+        print(div)
+      })
+    }
+
+    function print(div){
+      var iframe = document.createElement('iframe')
+      var iframeStyle = 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;'
+      $("iframe").attr({
+        "style":iframeStyle,
+        "id":"print1"
+      })
+      document.body.appendChild(iframe)
+      var doc = iframe.contentWindow.document
+      console.log(doc)
+      $(document).find("link").filter(function(){
+        return $(this).attr("rel").toLowerCase() == 'stylesheet'
+      }).each(function(){
+        doc.write('<link type="text/css" rel="stylesheet" href="'+$(this).attr("href")+'">')
+      })
+      doc.write('<div class="'+$(div).attr("class")+'>'+$(div).html()+'</div>')
+      doc.close()
+      var iframeWindow = iframe.contentWindow
+      iframeWindow.close();
+      iframeWindow.focus();
+      iframeWindow.print();
+    }
+
+  })()
+</script>
+
+</body>
+
+</html>

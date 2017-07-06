@@ -5,17 +5,21 @@
 	<title>轮播</title>
 	<style>
 		.banner{
-			/*width:200px;
-			height: 200px;*/
+			width:200px;
+			height: 200px;
 			margin: 0 auto;
+			overflow: hidden;
+			border:1px solid red;
+			box-sizing: border-box;
 		}
 		img{
-			display: inline;
+			display: inline-block;
 			width:200px;
 			height: 200px;
 			margin-left: 200px;
-			transition: transform .6s ease-in-out;			
+			transition: 2s margin-left linear;			
 		}
+	
 		.active{
 			margin-left: 0px;
 			display: inline-block;
@@ -24,6 +28,13 @@
 			display: none;
 		}
 		
+		.img-fade{
+			margin-left: -200px;
+		}
+		.img-show{
+			margin-left: 0px;!important
+		}
+
 
 	</style>
 </head>
@@ -31,31 +42,48 @@
 	
 	<div class="banner">
 		<img class="active" src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="1">
-	    <!-- <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="2">
+	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="2">
 	    <img src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="3">
-	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="4"> -->
+	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="4">
 	    
 	</div>
 
 	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
 	<script>
 		(function () {
-			// var _banner = $(".banner");
-			// var length = _banner.find("img").length;
-			// setInterval(function(){
-			// 	var nextEl = _banner.find(".active").next()
-			// 	_banner.find(".active").removeClass("active")
-			// 	if(nextEl.length>0){
-			// 		nextEl.addClass("active")
-			// 	}else{
-			// 		nextEl = _banner.find("img:first-child")
-			// 		nextEl.addClass("active")
-			// 	}
-				
-			// },1000)
+
+			main($(".banner"))
 
 		})()
-		
+
+		function main(div){
+			var imgEles = div.find("img")
+			var length = imgEles.length
+			imgEles.each(function(index,element){
+        debugger
+				var isHave = jQuery(element).hasClass("active")
+				if(isHave){
+					if(index < length){
+						fadeOut(jQuery(element))
+            fadein(imgEles.eq(index+1))
+					}else{
+
+          }
+				}
+			})
+		}
+
+		function fadeout(div){
+			setTimeout(function(){
+				div.addClass('img-fade')
+				div.removeClass('active')
+			},1000)
+		}
+		function fadein(div){
+			div.addClass("active")
+			div.addClass("img-show")
+		}
+
 	</script>
 </body>
 </html>

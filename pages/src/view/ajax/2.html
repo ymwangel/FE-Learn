@@ -13,21 +13,21 @@
     data = {
       
     }
-    getDatas(type,url,data,function() {
-      console.log(arguments)
-    })
+    // getDatas(type,url,data,function() {
+    //   console.log(arguments)
+    // })
 
-		function getDatas(type,url,data,callback) {
-	    $.ajax({type:type,
+		function getDatas(url,data) {
+	    $.ajax({type:"get",
 	      url:url,
 	      data:data,
-	      dataType:"text"
-	    }).then(function(data,status){
+	      dataType:"json"
+	    }).then(function(data){
 	      console.log("success")
-        callback(data)
+          // callback(data)
 	    },function(error){
 	      console.log("failed")
-        callback(error)
+          // callback(error)
 	    })
 	  }
 	})()
