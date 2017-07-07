@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>button---form</title>
+	<style>
+		.con{
+			margin: 0 auto;
+		}
+		.agree{
+
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<input type="radio" name="protocol" value="protocol">同意协议
+		<button class="apply" apply disabled>申请</button>
+	</div>
+	
+	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		(function() {
+			$("input").click(function (argument) {
+				var val = $('input:radio[name="protocol"]:checked').val()
+				console.log(val)
+				if(val=='protocol'){
+					$("button").removeAttr("disabled")
+				}
+			})
+			$('button').on("click",function () {
+				console.log(1)
+			})
+			
+		})()
+	</script>
+</body>
+</html>
