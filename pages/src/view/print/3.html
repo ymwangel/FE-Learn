@@ -1,0 +1,76 @@
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <title></title>  
+    <link rel="stylesheet" href="./3.css">
+</head>  
+<body>  
+<ul class="list" list>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+    <li class="list-item">打印list-item</li>
+  </ul>  
+<button id="printBtn">打印</button>
+  
+<script> 
+
+    document.getElementById('printBtn').addEventListener('click',function(){
+      var list = document.getElementsByClassName("list")
+      print(list)
+    })
+    function print(div){
+      var div = chooseEle(div)
+      var printAreaCount = 0
+      var idPrefix = "printArea_"
+      removePrintArea(idPrefix+printAreaCount)
+      printAreaCount++
+      var iframeId = idPrefix+printAreaCount
+      var iframeStyle = 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;'
+      var iframe = document.createElement('iframe')
+      iframe.setAttribute("style",iframeStyle)
+      iframe.setAttribute("id",iframeId)
+      document.body.appendChild(iframe)
+      var doc = iframe.contentWindow.document
+      var cssArr = document.getElementsByTagName("link")
+      filter(function(ele){
+        var index = Array.prototype.indexOf.call(cssArr,ele)
+        if(ele.getAttribute("rel").toLowerCase() != 'stylesheet'){
+          Array.prototype.splice.call(cssArr,index)
+        }
+      },cssArr)
+      each(function(ele){
+        doc.write('<link type="text/css" rel="stylesheet" href="'+ele.getAttribute("href")+'">')
+      },cssArr)
+      doc.write('<div class="'+div.getAttribute("class")+'>'+div.innerHTML+'</div>')
+      doc.close()
+      var iframeWindow = iframe.contentWindow
+      iframeWindow.focus();
+      iframeWindow.print();
+      iframeWindow.close();
+      
+    }
+    function each(fn,xs){
+      for(var i=0;i<xs.length;i++){
+        fn(xs[i])
+      }
+    }
+    function filter(fn,xs){
+      var r = [];
+      for(var i=0;i<xs.length;i++){
+        r.push(fn(xs[i]))
+      }
+      return r
+    }
+    var removePrintArea = function (id) {
+      if(document.getElementById(id)){
+        document.getElementById(id).remove()
+      }
+    }
+    function chooseEle(eleArr){
+      return eleArr[0]
+    }
+</script>  
+</body>  
+</html>  

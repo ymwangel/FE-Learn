@@ -25,14 +25,15 @@
 
     function print(div){
       var iframe = document.createElement('iframe')
+      var iframeId = 
       var iframeStyle = 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;'
       $("iframe").attr({
-        "style":iframeStyle,
-        "id":"print1"
-      })
+        style: iframeStyle,
+        id: iframeId
+      });
+      debugger
       document.body.appendChild(iframe)
       var doc = iframe.contentWindow.document
-      console.log(doc)
       $(document).find("link").filter(function(){
         return $(this).attr("rel").toLowerCase() == 'stylesheet'
       }).each(function(){
