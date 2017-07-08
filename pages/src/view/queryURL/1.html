@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>url参数增、删、改查</title>
+</head>
+<body>
+
+	<script>
+		var url = "httpps://www.wuage.com?a=1&b=2&c=3"
+    var obj = {
+      d:4,
+      e:5,
+    }
+		// var result = getPrama(url)
+    var href = addParam(url,obj)
+    // var href1 = deleteParam(url,"c")
+		function getPrama(url){
+      var result = []
+			var index = url.indexOf("?")
+			var pramaStr = url.slice(index+1)
+			var prama = pramaStr.split("&")
+			each(function(ele) {
+				var index = prama.indexOf(ele)
+				var r = ele.split("=")
+        var obj = {}
+        obj[r[0]]=r[1]
+        prama[index]=obj
+			},prama)
+      return prama
+		}
+
+    function addParam(url,obj){
+      var keys = Object.keys(obj)
+      var values = Object.values(obj)
+      if(url.indexOf("?")==-1){
+        url += "?"
+      }else{
+        url += "&" 
+      }
+      each(
+        (ele) {
+        var index = keys.indexOf(ele)
+        url += ele + "=" + values[index]
+      },keys)
+      return url
+    }
+
+    function deleteParam(url,name) {
+      var subUrl = url.slice(0,url.indexOf("?"))
+      var r = getPrama(url)
+      each(function(ele) {
+        var index = r.indexOf(ele)
+        var keys = Object.keys(ele)
+        if(keys[0] == name){
+          r.splice(index,1)
+        }else{
+          subUrl = addParam(subUrl,ele)
+        }
+      },r)
+      return subUrl
+    }
+
+		function each(fn,xs){
+      for(var i=0;i<xs.length;i++){
+        fn(xs[i])
+      }
+    }
+	</script>
+	
+</body>
+</html>

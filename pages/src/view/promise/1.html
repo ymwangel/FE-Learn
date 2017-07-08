@@ -23,7 +23,7 @@
 
 		/*promise例子*/
 		var getJSON = function(url) {
-	  var promise = new Promise(function(resolve, reject){
+	    var promise = new Promise(function(resolve, reject){
 	    var client = new XMLHttpRequest();
 	    client.open("GET", url);
 	    client.onreadystatechange = handler;
