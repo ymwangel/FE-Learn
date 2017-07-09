@@ -12,10 +12,11 @@
       d:4,
       e:5,
     }
-		// var result = getPrama(url)
+		// var result = getPrama(url,name)
     var href = addParam(url,obj)
     // var href1 = deleteParam(url,"c")
-		function getPrama(url){
+		function getPrama(url,name){
+      var name = name || ""
       var result = []
 			var index = url.indexOf("?")
 			var pramaStr = url.slice(index+1)

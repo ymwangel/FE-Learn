@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用css：阴影、常用button颜色</title>
+	<style>
+		.container{
+			width: 200px;
+			height: 200px;
+			background-color: #f1f1f1;
+			box-shadow: 0 0 16px 0 rgba(53,53,53,.2);
+		}
+    .btn{
+      background-color: #316ccb;
+      color: #fff;
+      width: 72px;
+      height: 32px;
+      border: none;
+      outline: none;
+      text-align: center;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+	</div>
+	<p>box-shadow值的描述：
+		<ul>
+			<li>h-shadow:必需：水平阴影的位置。允许负值</li>
+			<li>v-shadow:必需：垂直阴影的位置。允许负值</li>
+			<li>blur：可选：模糊距离</li>
+			<li>spread：可选：阴影的尺寸</li>
+			<li>color：可选，阴影的颜色。</li>
+			<li>inset：可选。将外部阴影（outset）改为内部阴影</li>
+		</ul>
+	</p>
+  <!-- button不要设置line-height，会自动垂直居中 -->
+  <button class="btn">示例按钮</button>
+</body>
+</html>

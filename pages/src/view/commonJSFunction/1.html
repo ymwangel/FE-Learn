@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>常用js函数（纯js实现）</title>
+</head>
+<body>
+	<script>
+		function map(fn,xs){
+			var r = [];
+			for(var i=0;i<xs.length;i++){
+				r.push(fn(xs[i]))
+			}
+			return r
+		}
+
+    function mapIndex(fn,xs){
+      var r = [];
+      for(var i=0;i<xs.length;i++){
+        r.push(fn(xs[i]),i)
+      }
+      return r
+    }
+
+    function each(fn,xs){
+      for(var i=0;i<xs.length;i++){
+        fn(xs[i])
+      }
+    }
+    // 截取数组中前n个元素
+    function take(n,xs){
+      var r = [];
+      for(var i=0;i<xs.length&i<n;i++){
+        r.push(xs[i])
+      }
+      return r
+    }
+
+    // 选取xs中最后n个元素
+    function drop(n,xs){
+      var r = []
+      for(var i=n;i<xs.length;i++){
+        r.push(xs[i])
+      }
+      return r
+    }
+
+    function arrIsEmpty(xs) {
+      return xs.length==0
+    }
+
+    function head(xs){
+      return xs[0]
+    }
+
+    // 选取除第一个元素外的所有元素
+    function tail(xs){
+      return xs.slice(1)
+    }
+
+    
+
+	</script>
+</body>
+</html>
