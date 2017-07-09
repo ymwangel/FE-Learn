@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>透明度动画效果</title>
+	<style>
+		body,div{
+			margin:0;
+			padding: 0;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			filter: alpha(opacity:30);
+			opacity: 0.3;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>	
+	<script>
+		window.onload = function (argument) {
+			var oDiv = document.getElementById("div1")
+			oDiv.onmouseover = function () {
+				startMove(100)
+			}
+			oDiv.onmouseout = function () {
+				startMove(30)
+			}
+
+			var timer = null
+			function startMove(target){
+				var oDiv = document.getElementById("div1")
+				var speed = 0;
+				if(oDiv.style.opacity < target){
+					speed = 10
+				}else{
+					speed = -10
+				}
+				clearInterval(timer)
+				timer = setInterval(function () {
+					if(oDiv.style.opacity == target){
+						clearInterval(timer)
+					}else{
+						oDiv.style.opacity = oDiv.style.opacity + speed
+
+					}
+				},1000)
+			}
+		}
+	</script>
+</body>
+</html>

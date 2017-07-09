@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js实现运动-动画</title>
+	<style>
+		.box{
+			width: 200px;
+			height: 200px;
+			background-color: #fff;
+      box-sizing: border-box;
+      border: 1px solid red;
+		}
+    .container{
+      width: 100px;
+      height: 100px;
+      background-color: #316ccb;
+    }
+	</style>
+</head>
+<body>
+	<div class="box" box>
+		<div class="container" container></div>
+	</div>
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+	<script>
+		(function(){
+			main($("[container]"),100,10)
+		})()
+
+		function main(div,value,speed){
+			var left = 0
+      for(var i=0; i<value;i++){
+        timer = setInterval(function(){
+          div.css("marginLeft",left)
+          left += speed
+        },2000)
+      }
+
+		}
+
+	</script>
+</body>
+</html>
