@@ -7,59 +7,54 @@
 <body>
 
 	<script>
-		var url = "httpps://www.wuage.com?a=1&b=2&c=3"
+		var url = "httpps://www.wuage.com?a=1/#main"
     var obj = {
       d:4,
       e:5,
     }
-		// var result = getPrama(url,name)
-    var href = addParam(url,obj)
-    // var href1 = deleteParam(url,"c")
-		function getPrama(url,name){
-      var name = name || ""
-      var result = []
-			var index = url.indexOf("?")
-			var pramaStr = url.slice(index+1)
-			var prama = pramaStr.split("&")
-			each(function(ele) {
-				var index = prama.indexOf(ele)
-				var r = ele.split("=")
-        var obj = {}
-        obj[r[0]]=r[1]
-        prama[index]=obj
-			},prama)
-      return prama
-		}
-
-    function addParam(url,obj){
-      var keys = Object.keys(obj)
-      var values = Object.values(obj)
-      if(url.indexOf("?")==-1){
-        url += "?"
-      }else{
-        url += "&" 
+	
+    // var r = parserUrl(url)
+    var params = {
+      b:2,
+      c:3
+    }
+    paramConcatUrl(url,params)
+    
+    function parserUrl(url){
+      var r = {}
+      var preqs = url.split('#')[0]
+      var qs = preqs.split('?').slice(1).join('?')
+      var pairs = qs.split('&')
+      for(var i=0;i<pairs.length;i++){
+        var keyValue = pairs[i].split('=') 
+        var key = keyValue[0]
+        r[key] = keyValue.slice(1).join('=')  /*变成字符串*/
       }
-      each(
-        (ele) {
-        var index = keys.indexOf(ele)
-        url += ele + "=" + values[index]
-      },keys)
-      return url
+      return r
     }
 
-    function deleteParam(url,name) {
-      var subUrl = url.slice(0,url.indexOf("?"))
-      var r = getPrama(url)
-      each(function(ele) {
-        var index = r.indexOf(ele)
-        var keys = Object.keys(ele)
-        if(keys[0] == name){
-          r.splice(index,1)
+
+    function paramConcatUrl(originurl,params){
+      debugger
+      var urls = originurl.split('#')
+      var url = urls[0]
+      var rep = url.indexOf('?') == -1 ? '?' : '&'
+      var pairs = []
+      for(var key in params){
+        pairs.push(key+'='+params[key])
+      }
+      if(pairs.length == 0){
+        return tourl(url)
+      }else{
+        return tourl(url + rep + pairs.join('&'))
+      }
+      function tourl(url){
+        if(urls.length>1){
+          return url + '#' + urls.slice(1).join('#')
         }else{
-          subUrl = addParam(subUrl,ele)
+          return url
         }
-      },r)
-      return subUrl
+      }
     }
 
 		function each(fn,xs){
