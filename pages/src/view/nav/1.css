@@ -1,0 +1,106 @@
+*{
+  padding:0;
+  margin:0;
+}
+ul,ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix{
+  zoom:1;
+}
+.clearfix:after{
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.topNav{
+  width: 100%;
+  height: 32px;
+  transition: top .3s ease-out;
+}
+.company-name{
+  font-size:14px;
+  margin-top: 5px;
+  display: none;
+  width: 200px;
+  text-align: center;
+}
+.topTab{
+  border-bottom :none;
+}
+.nav-list{
+  font-size: 0px;
+  margin-left: 200px;
+  box-sizing: border-box;
+  height: 32px;
+}
+.list-item{
+  display: inline-block;
+  width: 200px;
+  height: 32px;
+  box-sizing: border-box;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: #353535;
+  cursor: pointer;
+}
+.itemActive{
+  border-top: 1px solid #316ccb;
+  color: #316ccb;
+  box-sizing: border-box;
+}
+.detail{
+  /*margin-bottom: 500px;*/
+}
+.query-price{
+  background-color: #316ccb;
+  color: #fff;
+  width: 82px;
+  height: 30px;
+  text-align: center;
+  border:none;
+  outline:none;
+  margin-right: 20px;
+  margin-top: 1px;
+  display: none;
+}
+.contact-buyer{
+  background-color: #fff;
+  color: #316ccb;
+  width: 82px;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #316ccb;
+  outline:none;
+  margin-right: 20px;
+  margin-top: 1px;
+  display: none;
+}
+.fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 16px 0 rgba(53,53,53,.2);
+}
+.fixed .nav-list{
+  margin-left: 0;
+}
+.good-intro{
+  font-size: 0px;
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>各种高度</title>
+</head>
+<body>
+<script>
+  alert($(window).height()); //浏览器当前窗口可视区域高度
+  alert($(document).height()); //浏览器当前窗口文档的高度
+  alert($(document.body).height());//浏览器当前窗口文档body的高度
+  alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin
+</script>
+</body>
+</html>
