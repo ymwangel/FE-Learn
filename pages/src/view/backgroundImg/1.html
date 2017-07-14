@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>背景图片</title>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+    .mod-banner{
+      width: 100%;
+      background:url("./banner－repeat.png") repeat-x;
+      height: 480px;
+    }
+    .container{
+      width: 8px;
+      height: 480px;
+      border:1px solid red;
+      box-sizing: border-box;
+      margin-left: 100px;
+    }
+    .container img{
+      width: 8px;
+      height: 480px;
+      
+    }
+  </style>
+</head>
+<body>
+
+
+    <!-- <div class="mod-banner"></div> -->
+    <div class="container">
+      <img src="./banner－repeat.png" alt="">
+    </div>
+    <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+    <script>
+      console.log($("img").width())
+    </script>
+</body>
+</html>
