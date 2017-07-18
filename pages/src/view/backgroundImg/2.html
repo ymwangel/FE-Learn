@@ -9,24 +9,61 @@
       margin:0;
     }
     .container{
-      width: 1084px;
-      height:1000px;
-     background: -webkit-linear-gradient(rgb(231,161,149) 0%, #ffffff 100%);
-     background: -o-linear-gradient(rgb(231,161,149) 0%, #ffffff 100%);
-     background: linear-gradient(rgb(231,161,149) 0%, #ffffff 100%);
-    
+      width: 500px;
+      height:500px;
+      margin:0 auto;
+      box-sizing: border-box;
+     background: -webkit-linear-gradient(rgb(247,130,42) 0%, rgb(252,183,63) 100%);
+     background: -o-linear-gradient(rgb(247,130,42) 0%, rgb(252,183,63) 100%);
+     background: linear-gradient(rgb(247,130,42) 0%, rgb(252,183,63) 100%);
+     border:1px solid;
+     border-image: linear-gradient(rgb(247,130,42) 0%,rgb(252,183,63) 100%);
+     border-bottom: none;
+     border-top: none;
+      /*border-image: 1px solid linear-gradient(rgb(247,130,42) 0%, #ffffff 100%);;*/
     }
     img{
       display: block;
       margin-bottom: 10px;
       margin:0 auto;
     }
+    li:nth-last-chld(4){
+      border:1px solid red;
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
     <p>wei</p>
+    <ul>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+    </ul>
     
   </div>
+  <div class="fixed"><img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="1"></div>
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+  <script>
+    (function(){
+      var style = "position:fixed;top:100px;left:100px;margin-top:-50px;"
+      debugger
+      $(".fixed").css("position","fixed")
+      $(".fixed").css("top","100px")
+      $(".fixed").css("left","100px")
+      $(".fixed").css("marginTop","-50px")
+
+    })()
+    
+  </script>
 </body>
 </html>

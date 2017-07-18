@@ -13,55 +13,8 @@
     <li class="list-item">打印list-item</li>
   </ul>  
 <button id="printBtn">打印</button>
-  
-<script> 
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
 
-    document.getElementById('printBtn').addEventListener('click',function(){
-      var list = document.getElementsByClassName("list")[0]
-      printElement(list)
-    })
-
-    function printElement(div,customClass){
-      if(customClass != null){
-        div.className += ' ' + customClass
-      }else{
-        void null
-      }
-      var iframeStyle = 'display:none;'
-      var iframe = document.createElement('iframe')
-      iframe.setAttribute("style",iframeStyle)
-      document.body.appendChild(iframe)
-      var doc = iframe.contentWindow.document
-      var cssArr = document.querySelectorAll('link[rel=stylesheet]')
-      each(function(ele){
-        doc.write(ele.outerHTML)
-      },cssArr)
-      doc.write(div.outerHTML)
-      doc.close()
-      var iframeWindow = iframe.contentWindow
-      iframeWindow.onload =function(){
-        iframeWindow.print()
-        if(iframe.remove){
-          iframe.remove()
-        }else{
-          void null
-        }
-      }
-    }
-
-    function each(fn,xs){
-      for(var i=0;i<xs.length;i++){
-        fn(xs[i])
-      }
-    }
-    var removePrintArea = function (id) {
-      if(document.getElementById(id)){
-        document.getElementById(id).remove()
-      }
-    }
-    function chooseEle(eleArr){
-      return eleArr[0]
-    }
-</script>  
+<script src="./3.js"></script> 
 </body>  
 </html>  
