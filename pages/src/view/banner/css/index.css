@@ -1,0 +1,115 @@
+html{
+  background-color: #f1f1f1;
+}
+.layout-spu {
+  width: 1184px;
+  margin: auto;
+  background: #fff;
+  padding: 0 48px;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.layout-spu h3 {
+  color: #656565;
+}
+
+.layout-spu .container {
+  width: 1088px;
+  overflow: hidden;
+}
+
+.layout-spu .functionbar {
+  display: block;
+}
+
+.layout-spu ul {
+  font-size: 0px;
+  left: 0px;
+  white-space: nowrap;
+  margin-top: 16px;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.layout-spu ul>li {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.layout-spu .imgauthor {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 6px;
+}
+
+.layout-spu .imgauthor img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.layout-spu .info {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 12px;
+  color: #656565;
+}
+
+.layout-spu a {
+  text-decoration: none;
+}
+
+.layout-spu .info a:hover {
+  color: #316ccb;
+}
+
+.layout-spu .info .name2,
+.layout-spu .info .name3,
+.layout-spu .info .name1 {
+  color: #656565;
+  display: block;
+  width: 96px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 3px;
+}
+
+.layout-spu .d-icon.scroll-left {
+  background: url("../i/sprite.png");
+  position: absolute;
+  top: 44px;
+  left: 0px;
+  width: 24px;
+  height: 40px;
+  background-position: -15px -20px;
+}
+
+.layout-spu .d-icon.scroll-left:hover {
+  background: url("../i/sprite.png");
+  width: 24px;
+  height: 40px;
+  background-position: -163px -20px;
+  cursor: pointer;
+}
+
+.layout-spu .d-icon.scroll-right {
+  background: url("../i/sprite.png");
+  position: absolute;
+  top: 44px;
+  right: 0px;
+  width: 24px;
+  height: 40px;
+  background-position: -60px -20px;
+  cursor: pointer;
+}
+
+.layout-spu .d-icon.scroll-right:hover {
+  background: url("../i/sprite.png");
+  width: 24px;
+  height: 40px;
+  background-position: -111px -20px;
+}

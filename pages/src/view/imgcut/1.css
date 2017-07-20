@@ -1,0 +1,33 @@
+.form-img{
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+/*.test{
+  margin-left: 100px;
+  width: 2000px;
+  height: 2000px;
+  box-sizing: border-box;
+  position: relative;
+}
+.test-img{
+  width: 115px;
+  height: 98px;
+  box-sizing: border-box;
+  border: 1px solid red;
+  background: url("http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg") no-repeat;
+  background-position: -37px -78px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}*/
+.fixed{
+  width: 1000px;
+  height: 1000px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+  text-align: center;
+}
