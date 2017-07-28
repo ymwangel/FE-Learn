@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>file读取</title>
+</head>
+<body>
+  <input type="file" id="file">
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+  <script>
+
+    $("input").on('change',function(){
+      // var data = $(this).val().base64file(); // it is not a plugin is just an example
+      var f = new File($(this))
+      f.convertToBase64(function(base64){
+        console.log(base64)
+      })
+      
+    });
+
+    File.prototype.convertToBase64 = function(callback){
+      var FR= new FileReader();
+      FR.onload = function(e) {
+           callback(e.target.result)
+      };       
+      FR.readAsDataURL(this);
+    }
+    
+  </script>
+</body>
+</html>

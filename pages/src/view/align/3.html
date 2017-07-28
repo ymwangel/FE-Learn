@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>垂直居中</title>
+  <style>
+    .layout{
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      border: 1px solid red;
+      text-align: center;
+    }
+    .layout:after{
+      content: "";
+      display: inline-block;
+      height:100%;
+      width:0;
+      vertical-align:middle;
+    }
+    .container{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="container">
+      sajklfjwioe
+    </div>
+  </div>
+  
+</body>
+</html>
