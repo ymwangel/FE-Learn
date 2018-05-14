@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>轮播</title>
+  <style>
+    ul,li{
+      list-style:none;
+    }
+    .container{
+      width: 584px;
+      height: 304px;
+      overflow: hidden;
+      margin:0 auto;
+      position: relative;
+      text-align: center;
+      font-size: 0px;
+    }
+    .box{
+      position: relative;
+      font-size: 0px;
+      padding-left: 0px;
+      white-space: nowrap;
+      left: -584px;
+    }
+    .box>li{
+      display: inline-block;
+    }
+    .box>li>img{
+      width: 584px;
+      height: 304px;
+    }
+    .tab{
+      display: inline-block;
+      position: relative;
+      bottom: 30px;
+    }
+    .tab>li{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #f1f1f1;
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .tab>li:first-child{
+      margin-left: 0px;
+    }
+    .tab>li:hover{
+      background-color: #316ccb;
+    }
+    .tab>li.tab-active{
+      background-color: #316ccb;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container" container>
+    <ul class="box">
+    </ul>
+    <div class="tab">
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+  <script src="./2.js"></script>
+</body>
+</html>

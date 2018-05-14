@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>模仿加入购物车动画</title>
+  <style>
+    *{
+      padding: 0;
+      margin:0;
+    }
+    .mod-main{
+      width: 200px;
+      height: 200px;
+      overflow: visible;
+      position: relative;
+      display: inline-block;
+      z-index: 0;
+    }
+    .mod-main>img{
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+    .mod-rightBox{
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      width: 42px;
+      height: 100%;
+      background-color: #444851
+    }
+    .mod-cart{
+      position: relative;
+      top: 50px;
+      left: 15%;
+      width: 70%;
+      height: 129px;
+      overflow:visible;
+      text-align: center;
+    }
+    .cart-number{
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      background-color: #ed145b;
+      color: #fff;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 21px;
+      margin-top: 15px;
+    }
+    .copy{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      /*animation: mymove 800ms;
+      -moz-animation:mymove 800ms;
+      -webkit-animation:mymove 800ms; 
+      -o-animation:mymove 800ms; */
+      z-index: 100;
+    }
+    @keyframes mymove {
+      from {bottom: 0px; width: 200px; height: 200px; border-radius: 0;}
+      to {bottom: 150px; width: 100px; height: 100px; border-radius: 50%;}
+    }
+    @-moz-keyframes mymove 
+    {
+    from {bottom:0px; width: 200px; height: 200px; border-radius: 0}
+    to {bottom:150px;width: 100px; height: 100px; border-radius: 50%}
+    }
+
+    @-webkit-keyframes mymove
+    {
+    from {bottom:0px; width: 200px; height: 200px; border-radius: 0}
+    to {bottom:150px;width: 100px; height: 100px; border-radius: 50%}
+    }
+
+    @-o-keyframes mymove 
+    {
+    from {bottom:0px; width: 200px; height: 200px; border-radius: 0}
+    to {bottom:150px;width: 100px; height: 100px; border-radius: 50%}
+    }
+  </style>
+</head>
+<body>
+
+  <ul style="margin-top: 200px;">
+    <li class="mod-main" img-box>
+      <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+    </li>
+    <li class="mod-main" img-box>
+      <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+    </li>
+    <li class="mod-main" img-box>
+      <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+    </li>
+    <li class="mod-main" img-box>
+      <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+    </li>
+  </ul>
+  <!-- <div class="mod-main" img-box>
+    <img src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+  </div>   -->
+
+  <div class="mod-rightBox">
+    <div class="mod-cart">
+      购物车
+      <span class="cart-number">0</span>  
+    </div>
+  </div>
+  
+  <script type="text/javascript" src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script type="text/javascript">
+    // $("[img-box]").find('img').on('click',function () {
+    //   var _this = $(this)
+    //   copy = _this.clone().addClass('copy')
+    //   _this.closest("[img-box]").append(copy)
+    //   var cart = getPosition($(".cart-number"))
+    //   var el = $(".cart-number")
+    //   copy.animate({bottom: "150px", width: "50px", height: "50px", borderRadius: "50%"},function(){
+    //     var pos = getPosition(_this)
+    //     var top = pos.top
+    //     var left = pos.left
+    //     copy.animate({top: cart.top+"px", left: cart.left+"px", width: "10px", height: "10px"},function(){
+    //        el.html(Number(el.html())+1)
+    //        copy.remove()
+    //     })
+    //   })
+
+    //   function getPosition(div){
+    //     return div.offset()
+    //   }
+    // })
+    $("[img-box]").find('img').on('click',function () {
+      var _this = $(this)
+      _this.velocity({
+        width: "50px;",
+        height: "50px",
+        borderRadius: '50%',
+        left: "500px",
+        top: "-200px",
+      })
+      function getPosition(div){
+        return div.offset()
+      }
+    })
+
+  </script>
+</body>
+</html>

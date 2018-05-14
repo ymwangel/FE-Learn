@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tab-target属性</title>
+  <style>
+    body{
+      margin:0px;
+      padding:0px;
+    }
+    a{
+      color: #98a61a;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #006acd;
+    }
+    ul{
+      list-style:none;
+    }
+    .tab-list{
+      width: 632px;
+      margin-top: 50px;
+      position: relative;
+    }
+    .tab-menu{
+      margin:0;
+    }
+    .tab-menu li{
+      display: inline-block;
+    }
+    .tab-menu li a{
+      color: #333;
+    }
+    .tab-menu li a:hover{
+      color: #316ccb;
+    }
+    .tab-content{
+      position: absolute;
+      left: 50px;
+      width: 600px;
+      height: 170px;
+      padding:15px;
+      border:1px solid #91a7b4;
+      border-radius: 3px;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+      word-wrap: break-word;
+      font-size: 18px;
+      line-height: 27px;
+      color: #666;
+      background: #fff;
+    }
+    #tab1:target, #tab2:target{
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div style="height: 100px;"></div>
+  <div class="tab-list">
+    <ul class="tab-menu">
+      <li><a href="#tab1">任务勋章</a></li>
+      <li><a href="#tab2">服务勋章</a></li>
+    </ul>
+    <div id="tab1" class="tab-content">信息优质</div>
+    <div id="tab2" class="tab-content">报价分享</div>
+  </div>
+  
+  <div style="height: 50px;"></div>
+  
+</body>
+</html>

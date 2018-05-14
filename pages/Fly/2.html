@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fly</title>
+  <style>
+    .mod-rightBox{
+      position: fixed;
+      right: 0px;
+      top: 0px;
+      width: 42px;
+      height: 100%;
+      background-color: #444851
+    }
+    .mod-cart{
+      position: relative;
+      top: 50px;
+      left: 15%;
+      width: 70%;
+      height: 129px;
+      overflow:visible;
+      text-align: center;
+    }
+    .cart-number{
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      background-color: #ed145b;
+      color: #fff;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 21px;
+      margin-top: 15px;
+    }
+    .aa{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      top: 300px;
+      left: 0px;
+      background-color: red;
+    }
+    .c{
+      transform: rotate(360deg)
+    }
+  </style>
+</head>
+<body>
+  <img class="aa" src="https://aecpm.alicdn.com/simba/img/TB1XotJXQfb_uJkSnhJSuvdDVXa.jpg" alt="">
+  <div class="mod-rightBox">
+    <div class="mod-cart">
+      购物车
+      <span class="cart-number">0</span>  
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script type="text/javascript">
+    // $(".aa").on('click',function () {
+    //   var _this = $(this)
+    //   //点击时缩小图片
+    //   var cart = getPosition($(".cart-number"))
+    //   var el = $(".cart-number")
+    //   _this.animate({bottom: "150px", width: "50px", height: "50px", borderRadius: "50%"},function(){
+    //     var pos = getPosition(_this)
+    //     var top = pos.top
+    //     var left = pos.left
+    //     _this.animate({top: cart.top+"px", left: cart.left+"px", width: "10px", height: "10px"},function(){
+    //        el.html(Number(el.html())+1)
+    //     })
+    //   })
+
+    //   function getPosition(div){
+    //     return div.offset()
+    //   }
+    // })
+    $(".aa").on('click',function () {
+      var _this = $(this)
+      var cart = getPosition($(".cart-number"))
+      var el = $(".cart-number")
+      _this.velocity({
+        width: "100px;",
+        height: "100px",
+        borderRadius: '50%',
+      }).velocity({
+        left: "500px",
+        top: "0px"
+      },{
+          progress:function(){
+            _this.addClass('c')
+          }
+      }).velocity({
+        width: "10px;",
+        height: "10px",
+        left: cart.left,
+        top: cart.top
+      },{
+        complete: function(){
+          el.html(Number(el.html())+1)
+        }
+      })
+      function getPosition(div){
+        return div.offset()
+      }
+    })
+  </script>
+</body>
+</html>

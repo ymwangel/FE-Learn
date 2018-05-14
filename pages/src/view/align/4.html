@@ -3,12 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <title>垂直居中</title>
+  <style>
+    *{
+      margin:0;
+      padding :0;
+    }
+    .container{
+      width: 100%;
+      height: 100px;
+      font-size: 0px;
+    }
+    .list-item{
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+      border:1px solid red;
+      padding: 10px 10px;
+    }
+    img{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      vertical-align: middle;
+    }
+    .right-content{
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
   <ul class="container">
     <li class="list-item">
       <img src="" alt="">
-      
+      <div class="right-content">
+        <p>dsfweoirupjfd</p>
+      </div>
+    </li>
+    <li class="list-item">
+      <img src="" alt="">
+      <div class="right-content">
+        <p>dsfweoirupjfd</p>
+      </div>
     </li>
   </ul>
 </body>

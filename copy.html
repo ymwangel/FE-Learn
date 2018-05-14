@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js实现复制功能</title>
+  <style>
+    .input {
+      position: absolute;
+      left:-200px;
+      bottom:-100px
+    }
+  </style>
+</head>
+<body>
+  <p id="con">点击复制后在右边textarea CTRL+V看一下</p>
+  <input type="text" id="inputText" value="" placeholder="测试文本">
+  <input type="button" id="btn" value="复制">
+  <textarea rows="4"></textarea>
+  <script type="text/javascript">
+      var btn = document.getElementById('btn');
+      btn.addEventListener('click', function(){
+        var inputEl = document.querySelector('#inputText')
+        var inputText = inputEl.value
+        var input = document.createElement('input')
+        input.setAttribute('value',inputText)
+        input.setAttribute('class','input')
+        document.body.appendChild(input)
+        input.select()    //select() 方法用于选取文本域中的内容。
+        inputEl.select()
+        try {
+          document.execCommand('copy')
+          document.body.removeChild(input)
+        }catch(e){
+          console.log(e)
+          alert('当前浏览器不支持复制功能')
+        }
+
+      });
+  </script>
+  <script type="text/javascript" src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+</body>
+</html>

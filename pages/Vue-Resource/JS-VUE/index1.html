@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index1</title>
+</head>
+<body>
+  <input id="foo">
+  <p id="bar"><p>
+
+  <script>
+    var user = {}
+    // Object.defineProperty(user, 'name', {
+    //   get: function() { return document.getElementById("foo").value }, 
+    //   set: function(newValue) { 
+    //     document.getElementById("foo").value = newValue; 
+    //   },
+    //   configurable: true//to enable redefining the property later
+    // });
+
+    function bindModelInput(obj, property, domElem){
+      Object.defineProperty(obj, property, {
+        get: function() { return domElem.value; }, 
+        set: function(newValue) { domElem.value = newValue; },
+        configurable: true
+      });
+    }
+    bindModelInput(user,'name',document.getElementById('foo'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>tab切换</title>
+  <style>
+    .tab-box input{
+      display: none;
+    }
+    .tab-box-label label{
+      cursor: pointer;
+    }
+
+    .tab-content {
+      font-size: 14px;
+      width: 352px;
+      height: 200px;
+      margin-top: 5px;
+      border: solid 1px slategray;
+      display: none;
+    }
+    .tab-box input:nth-of-type(1):checked ~ .tab-contents .tab-content:nth-of-type(1),
+    .tab-box input:nth-of-type(2):checked ~ .tab-contents .tab-content:nth-of-type(2),
+    .tab-box input:nth-of-type(3):checked ~ .tab-contents .tab-content:nth-of-type(3) {
+      display: block;
+    }
+    .tab-box input:nth-of-type(1):checked ~ .tab-box-label label:nth-of-type(1),
+    .tab-box input:nth-of-type(2):checked ~ .tab-box-label label:nth-of-type(2),
+    .tab-box input:nth-of-type(3):checked ~ .tab-box-label label:nth-of-type(3) {
+      background-color: #88c846;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h3>'input'、tab-box-label'和'tab-contents'必须有相同的父级元素</h3>
+  <div class="tab-box">
+    <input type="radio" name='tab' value='renwu' id="tab-1" checked="">
+    <input type="radio" name='tab' value='fuwu' id="tab-2">
+  
+    <div class="tab-box-label">
+      <label for="tab-1">任务勋章（0/3）</label>
+      <label for="tab-2">服务勋章（0/3）</label>
+    </div>
+    <div class="tab-contents">
+      <div class="tab-content">
+        任务勋章：信息优质
+      </div>
+      <div class="tab-content">
+        服务勋章：报价分享
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

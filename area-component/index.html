@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>地区控件</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <div class="ym-area">
+    <div class="mod-input">
+      <label class="label">收货地址：</label>
+      <div class="input-box">
+        <input class="input" type="text" placeholder="请选择收货地址" data-input="input" readonly="readonly">
+        <div class="mod-con">
+          <ul class="con-title">
+            <li data-type="province" class="t">省</li>
+            <li data-type="city">市</li>
+            <li data-type="region">区</li>
+          </ul>
+          <ul class="con-lists">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    // window.STATE_AREA = [
+    //   {"provinceName":"北京","cityList":[{"cityName":"北京","region":["海淀","怀柔","朝阳","东城","西城","丰台","通州","昌平"]}]},
+    //   {"provinceName":"河北","cityList":[{"cityName":"石家庄","region":["桥西区","鹿泉县","桥东区","滦平县","石家庄"]},{"cityName":"廊坊","region":["大城县","文安","固安","燕郊","青县"]}]},
+    //   {"provinceName":"江苏","cityList":[{"cityName":"南京","region":["鼓楼区","玄武区","秦淮区","雨花台区","江宁区","栖霞区","浦口区","六合区","建邺区","高淳区","溧水区"]},{"cityName":"无锡","region":["惠山区","锡山区","滨湖区","粱溪区","新吴区"]}]}]
+      window.STATE_AREA = [
+      {"name":"河北","list":[{"name":"石家庄","list":[{"name":"桥西区"},{"name":"鹿泉县"},{"name":"桥东区"},{"name": "滦平县"},{"name": "石家庄"}]},{"name":"廊坊","list":[{"name": "大城县"},{"name": "文安"},{"name": "固安"},{"name":"燕郊"},{"name":"青县"}]}]},
+      {"name":"江苏","list":[{"name":"南京","list":[{"name": "鼓楼区"},{"name": "玄武区"},{"name": "秦淮区"},{"name": "雨花台区"},{"name": "江宁区"},{"name": "栖霞区"},{"name": "浦口区"},{"name": "六合区"},{"name": "建邺区"},{"name": "高淳区"},{"name":"溧水区"}]},{"name":"无锡","list":[{"name":"惠山区"},{"name": "锡山区"},{"name":"滨湖区"},{"name":"粱溪区"},{"name":"新吴区"}]}]}]
+  </script>
+  <script src="../lib/jquery-3.2.1.min.js"></script>
+  <script src="./index1.js"></script>
+</body>
+</html>

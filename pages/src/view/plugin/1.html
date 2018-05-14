@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+  <!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+  <style>
+      .primary{
+        background-color: #316ccb;
+        color: #fff;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 10px 0px;
+        text-align: center;
+      }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+  <script src="index.js"></script>
+  <script>
+    var options = {
+      buttonClass:'primary',
+      text:'登录',
+      clickBtn:function(element){console.log("登录")}
+    }
+    $(".box").buttonPluign(options)
+    console.log($(".box").data('buttonPluign'))
+    $(".box").data('buttonPluign').init()
+  </script>
+</body>
+</html>

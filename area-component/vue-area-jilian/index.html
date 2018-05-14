@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="_csrf" content="${_csrf.token}"/>
+  <meta name="_csrf_header" content="${_csrf.headerName}"/>
+  <title>级联选择器</title>
+  <link rel="stylesheet" href="./lib/reset.css">
+  <!-- <link rel="stylesheet" href="./css/area.css"> -->
+</head>
+<body>
+  <div id="app">
+    <app></app> 
+  </div>
+
+  <script>
+    window.STATE_AREA ={
+    "list": [
+      {"name":"河北","id":"1","list":[{"name":"石家庄","id":"10","list":[{"name":"桥西区","id":"101",},{"name":"鹿泉县"},{"name":"桥东区","id":"102",},{"name": "滦平县","id":"103"}]},
+        {"name":"廊坊","id":"11","list":[{"name": "大城县","id":"111"},{"name": "文安","id":"112"},{"name": "固安","id":"113"},{"name":"燕郊","id":"114"},{"name":"青县","id":"115"}]}]},
+      {"name":"江苏","id":"2","list":[{"name":"南京","id":"20","list":[{"name": "鼓楼区","id":"201"},{"name": "玄武区","id":"202"},{"name": "秦淮区","id":"203"},{"name": "雨花台区","id":"204"},{"name": "江宁区","id":"205"},{"name": "栖霞区","id":"206"},{"name": "浦口区","id":"207"},{"name": "六合区","id":"208"},{"name": "建邺区","id":"209"},{"name": "高淳区","id":"2010"},{"name":"溧水区","id":"2011"}]},
+        {"name":"无锡","id":"21","list":[{"name":"惠山区","id":"211"},{"name": "锡山区","id":"212"},{"name":"滨湖区","id":"213"},{"name":"粱溪区","id":"214"},{"name":"新吴区","id":"215"}]}]},
+      {"name":"北京","id":"3","list":[{"name":"北京","id":"30","list":[{"name": "东城区","id":"301"},{"name": "西城区","id":"302"},{"name": "朝阳区","id":"303"},{"name": "海淀区","id":"304"},{"name": "门头沟区","id":"305"},{"name": "丰台区","id":"306"},{"name": "昌平区","id":"307"},{"name": "房山区","id":"308"},{"name": "通州区","id":"309"},{"name": "石景山区","id":"3010"},{"name":"顺义区","id":"3011"},{"name":"大兴区","id":"3012"},{"name":"怀柔区","id":"3013"},{"name":"密云区","id":"3014"}]}]}
+    ]}  
+    
+  </script>
+  <script src="//static.wuage.com/common/lib/jquery.min.js"></script>
+  <script src="./dist/build.js" async="async"></script>
+  
+</body>
+</html>

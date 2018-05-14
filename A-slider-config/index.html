@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>可配置的轮播</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    ul,ol {
+      list-style: none;
+    }
+    .fl {
+      float: left;
+    }
+    .fr {
+      float: right;
+    }
+    .clearfix {
+      zoom: 1;
+    }
+    .clearfix:after {
+      content: '';
+      display: block;
+      height: 0;
+      overflow: hidden;
+      clear: both;
+    }
+    .swi-box {
+      /*width: 100%;
+      height: 100%;*/
+      width: 584px;
+      height: 584px;
+      overflow: hidden;
+      position: relative;
+    }
+    .swi-ul {
+      font-size: 0px;
+      position: relative;
+      left: 0px;
+      white-space: nowrap;
+    }
+    .swi-li {
+      display: inline-block;
+    }
+    .swi-li>img{
+      width: 584px;
+    }
+    .swi-quote {
+      position: relative;
+      bottom: 20px;
+      margin: 0 auto;
+      font-size: 0px;
+      text-align: center;
+    }
+    .qu-li {
+      width: 15px;
+      height:15px;
+      background-color: #959595;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      vertical-align: middle;
+      line-height: 15px;
+      cursor: pointer;
+    }
+    .qu-li.qu-active{
+      background-color: #316ccb;
+      /*color: #316ccb;*/
+    }
+    .qu-li:last-child{
+      margin-right: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="swi-box" swi-box>
+    <ul class="swi-ul" swiUl>
+      <li class="swi-li">
+        <img src="https://medici.wuage.com/image/152152017822031096435664221644.png" alt="">
+      </li>
+      <li class="swi-li">
+        <img src="https://medici.wuage.com/image/152152013000935587513307109475.png" alt="">
+      </li>
+      <li class="swi-li">
+        <img src="https://medici.wuage.com/image/15215201453447148067886009812.png" alt="">
+      </li>
+      <li class="swi-li">
+        <img src="https://medici.wuage.com/image/15215201621445082584340125322.png" alt="">
+      </li>
+      <li class="swi-li">
+        <img src="https://medici.wuage.com/image/152152017822031096435664221644.png" alt="">
+      </li>
+    </ul>
+    <ul class="swi-quote" swi-quote>
+      <li class="qu-li qu-active" qu-idx="0">1</li>
+      <li class="qu-li" qu-idx="1">2</li>
+      <li class="qu-li" qu-idx="2">3</li>
+      <li class="qu-li" qu-idx="3">4</li>
+    </ul>
+  </div>
+
+  <script src="../lib/jquery-3.2.1.min.js"></script>
+  <script src="index1.js"></script>
+</body>
+</html>

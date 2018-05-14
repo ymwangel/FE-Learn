@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>圆环进度条</title>
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    #con {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <p>圆环为box，利用left的旋转，当left旋转180deg时，显示right，当left旋转360deg时，清除clip类的clip属性</p>
+  <div id="con"></div>
+  <script src="./index.js"></script>
+  <script>
+    var a = new CircularScrollBar({
+      container: 'con',
+      value: '100',
+      valueColor: 'red',
+      color: '#316ccb',
+      backColor: '#ccc',
+      radius: '200'
+    })
+    a.init()
+  </script>
+</body>
+</html>

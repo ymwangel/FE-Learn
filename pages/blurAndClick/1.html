@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试blur、click、mousedown</title>
+  <style>
+    .container{
+      position: relative;
+    }
+    .list{
+      position: absolute;
+      width: 100px;
+      top: 20px;left: 0px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+   <p>监听mousedown时间，并组织事件默认行为：preventDefault()</p>
+   <p>click事件在blur事件之后执行，而mousedown事件在blur事件之前执行</p>
+  <div class="container">
+    <input class="input" type="text">
+    <ul class="list">
+      <li class="item">list1</li>
+      <li class="item">list2</li>
+      <li class="item">list3</li>
+      <li class="item">list4</li>
+    </ul>
+  </div>
+  <script>
+    var input = document.getElementsByClassName("input")[0]
+    var ul = document.getElementsByClassName('list')[0]
+    input.addEventListener('click',function () {
+      console.log('click input')
+      ul.style.display = 'block'
+    })
+    input.addEventListener('blur',function () {
+      console.log('blur input')
+      ul.style.display = 'none'
+    })
+    ul.addEventListener('click',function (e) {
+      console.log('ul click')
+      if(e.target && e.target.nodeName.toUpperCase == "LI"){
+      }
+    })
+    ul.addEventListener('mousedown',function (e) {
+      console.log('mousedown')
+      e.preventDefault()
+    })
+    ul.addEventListener('mouseup',function (e) {
+      console.log('mouseup')
+    })
+
+
+
+    // 默认行为：即浏览器本身具备的功能
+    // 例如：点击a标签会跳转至href的连接。
+    //      鼠标右击：会弹出菜单
+
+  </script>
+</body>
+</html>

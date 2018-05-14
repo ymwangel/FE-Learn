@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>水平、垂直居中总结</title>
+  <style>
+    .color {
+      color: #00ccbb;
+    }
+    .horizontal-center {
+      text-align: center;
+      /*display: inline-block;*/
+      width: 500px;
+    }
+    .horizontal-center-table {
+      width: 500px;
+    }
+    .horizontal-center-relative {
+      width: 500px;
+    }
+    .div-block-width{
+      width: 50px;
+      height: 50px;
+      background-color: #00ccbb;
+      margin: auto;
+    }
+    .div-block-no-width {
+      display: inline-block;
+    }
+    .div-block-no-width-table {
+      margin: auto;
+    }
+    .div-block-no-width-relative {
+      /*必须设置display:inline-block*/
+      display: inline-block; 
+      position: relative;
+      left: 50%;
+    }
+    .div-block-no-width-relative-txt {
+      display: inline-block;
+      position: relative;
+      left: -50%;
+    }
+    .span {
+      /*vertical-align: middle;*/
+    }
+    .vertical-center {
+      display: inline-block;
+      /*vertical-align: middle;*/
+      vertical-align: top;
+    }
+
+    /*.vertical-center-test {
+      width: 200px;
+      overflow: visible;
+    }*/
+    table {
+      background: white;
+      width: 240px;
+      border-collapse: separate;
+      margin: 20px;
+      height: 250px;
+    }
+
+    table td {
+      background: black;
+      color: white;
+      padding: 20px;
+      border: 10px solid white;
+      /* default is vertical-align: middle; */
+    }
+    .center-table {
+      display: table;
+      height: 250px;
+      background: white;
+      width: 240px;
+      margin: 20px;
+    }
+    .center-table p {
+      display: table-cell;
+      margin: 0;
+      background: black;
+      color: white;
+      padding: 20px;
+      border: 10px solid white;
+      vertical-align: middle;
+     }
+
+     .main{
+      background-color: black;
+      height: 300px;
+      margin: 20px;
+      width: 300px;
+      position: relative;
+      /*resize: vertical;
+      overflow: auto;*/
+    }
+    .main .main-txt{
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color:#fff;
+      padding: 20px;
+      transform: translate(-50%,-50%);
+      box-sizing: border-box;
+      border: 1px solid red;
+      /*resize:vertical;
+      overflow: auto;*/
+    }
+
+    .main-txt-calc {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      color:#fff;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid red;
+    }
+
+    .main-confirmed-height {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      height: 100px;
+      margin-top: -50px;
+      box-sizing: border-box;
+      border: 1px solid red;
+      color: #fff;
+      line-height: 100px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  <p class="color">水平居中: text-align:center;</p>
+  <hr>
+  <p class="color">block(非固定宽度)、inline-block(固定宽度)元素</p>
+  <div class="horizontal-center">水平居中</div>
+  <p class="color">块状元素(定宽)水平居中：使用：margin:auto; 或者将块状元素设置为：display:inline-block; 然后父元素设置为：text-align:center;</p>
+  <div class="horizontal-center">
+    <div class="div-block-width"></div>
+  </div>
+  <p class="color">块状元素（不定宽）水平居中：</p>
+  <div class="horizontal-center">
+    <div class="div-block-no-width">不定宽度的块状元素-设置水平居中--inline-block</div>
+  </div>
+
+  <div class="horizontal-center-table">
+    <table class="div-block-no-width-table">
+      <tr>
+        <td>不定宽度的块状元素-设置水平居中--table</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="horizontal-center-relative">
+    <div class="div-block-no-width-relative">
+      <div class="div-block-no-width-relative-txt">不定宽度的块状元素-设置水平居中--relative</div>
+    </div>
+  </div>
+
+  <hr>
+  <p class="color">垂直居中</p>
+  <p class="color">多行文本：方式一：vertical-align:middle; 应用于inline、inline-block元素</p>
+  <div class="">
+    <span class="span">垂直</span>
+    <div class="vertical-center">居中</div>
+  </div>
+  
+  <p class="color">单行文本垂直居中：设置 line-height 即可，因为文字在规定的line-height：中默认是垂直居中显示的；</p>
+
+  <hr>
+  <p>父元素高度不确定（或者不确定的多行文本）</p>
+  <p>父元素高度不确定（或者不确定的多行文本）----插入table标签</p>
+  <div class="vertical-center-test">
+    <table>
+      <tr>
+          <td>I'm vertically centered multiple lines of text in a real table cell.</td>
+      </tr>
+    </table>
+  </div>
+
+  <p>父元素高度确定-----display:table-cell</p>
+
+  <div class="vertical-center-test">
+    <div class="center-table">
+      <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+    </div>
+  </div>
+
+  <p>使用定位：position ---子元素高度不确定</p>
+  <div class="main">
+    <div class="main-txt">
+        子元素高度确定
+    </div>
+  </div>
+
+  <p>使用定位：position ----子元素高度确定</p>
+  <div class="main">
+    <div class="main-confirmed-height">
+      子元素高度固定
+    </div>
+  </div>
+
+  <p>使用定位：position ---不使用translate，使用calc()：子元素高度、宽度确定</p>
+
+  <div class="main">
+    <div class="main-txt-calc">子元素高度不确定</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>onbeforeunload</title>
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%
+    }
+  </style>
+</head>
+<body >
+  <iframe width="100%" height="100%" id="ifr" src="http://123.56.199.235:8888/Home/MaterialSearch?keywords=螺纹钢" frameborder="0"></iframe>
+
+  <script src="./lib/jquery-3.2.1.min.js"></script>
+  <script src="./lib/es6-promise.auto.min.js"></script>
+  <script>
+    function parserUrl(url) {
+      var r = {}
+      var preqs = url.split('#')[0]
+      var qs = preqs.split('?').slice(1).join('?')
+      qs = qs.indexOf("&") == 0 ? qs.slice(1) : qs
+      if(qs == ''){
+        void null
+      }else{
+        var pairs = qs.split('&')
+        for(var i=0;i<pairs.length;i++){
+          var keyValue = pairs[i].split('=')
+          var key = keyValue[0]
+          r[key] = keyValue.slice(1).join('=')
+        }
+      }
+      return r
+    }
+    function loadIframe() {
+      
+      let iframe = document.querySelector("iframe")
+      let iframeSrc = iframe.getAttribute('src')
+      let keywords = parserUrl(iframeSrc).keywords
+      $("#gjztxt1").val(keywords)
+      console.log($("#gjztxt1").val())
+    }
+
+    $("#ifr").load(function () {
+      console.log($("#gjztxt1"))
+      // $("#gjztxt1").val('sdf')
+    })
+    
+    
+  </script>
+</body>
+</html>

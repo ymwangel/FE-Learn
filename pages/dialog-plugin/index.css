@@ -1,0 +1,136 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+a,a:hover {
+  text-decoration: none;
+}
+ul,li{
+  list-style: none;
+}
+.mod-protocol {
+  width: 600px;
+  max-height: 582px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.mod-protocol .protocol-title {
+  margin: 0;
+  width: 100%;
+  height: 209px;
+  background: url('//img.wuage.com/151686497040965header.png') no-repeat;
+  background-size: 100% 209px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(250,250,250)
+}
+
+.mod-protocol .protocol-content {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 20px;
+  color: #353535;
+  padding: 24px 48px;
+  background-color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.mod-protocol .protocol-content .pro-txt {
+  width: 100%;
+  max-height: 168px;
+  overflow: scroll;
+  color: #858585;
+  background-color: #F8F8F8;
+  box-sizing: border-box;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+
+.mod-protocol .pro-txt .txt-header {
+  text-align: center;
+}
+
+.protocol-content h4 {
+  padding: 10px 0px;
+  font-size: 13px;
+}
+
+.print-title {
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  color: #656565;
+}
+
+.print h3 {
+  display: block;
+  text-align: center;
+}
+
+.mod-cover{
+  background: rgba(53,53,53,.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.mod-protocol .protocol-button {
+  display: block;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  background-color: #316ccb;
+  color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 10px 50px;
+  margin: 24px auto 16px;
+  border-radius: 2px;
+}
+
+.mod-protocol .protocol-button:hover {
+  background: #407fe7;
+}
+
+.d-icon.close {
+  display: inline-block;
+  background: url('//img.wuage.com/151686733994262dialog-close.png') no-repeat;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  background-position: 0px 0px;
+  position: absolute;
+  top: 73px;
+  right: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+.ym-toast{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  z-index: 12;
+  height: 64px;
+  box-sizing: border-box;
+  padding: 20px 45px;
+  text-align: center;
+  background-color: rgba(53,53,53,0.8);
+  color: #fff;
+  display: none;
+}
+
+

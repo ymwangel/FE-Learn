@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>垂直居中</title>
+  <style>
+    *{
+      padding:0;
+      margin:0;
+    }
+    .fe-inline{
+      display: inline-block;
+    }
+    .container{
+      width: 1025px;
+      margin :10px auto;
+      font-size: 0px;
+      background-color: #f1f1f1;
+    }
+    .left{
+      vertical-align: middle;
+
+    }
+    .right{
+      vertical-align: middle;
+    }
+    img{
+      width: 100px;
+      height: 100px;
+    }
+    .content{
+      display: inline-block;
+      vertical-align: top;
+      font-size: 12px;
+      margin-left: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="fe-inline" style="width:0px;height: 286px;vertical-align: middle;"></div>
+    <div class="left fe-inline">
+      <img src="" alt="">
+      <div class="content">
+        <p>slakjllew</p>
+        <p>slakjllew</p>
+        <p>slakjllew</p>
+      </div>
+    </div>
+    <div class="right fe-inline">
+      <img src="" alt="">
+      <div class="content">
+        <p>slakjllew</p>
+        <p>slakjllew</p>
+        <p>slakjllew</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

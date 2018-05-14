@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表单</title>
+  <style>
+    .input-style{
+      height: 32px;
+      width: 250px;
+      font-size: 14px;
+    }
+    .commit{
+      box-sizing: border-box;
+      border:1px solid #316ccb;
+      padding:7px 12px;
+      outline: none;
+      color: #316ccb;
+      font-size: 12px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="mod-form">
+    <form action="" class="form">
+      <div class="form-name">
+        <label for="name">姓名:</label>
+        <input class="input-style" id="name" type="text" value="" name="name" placeholder="请输入姓名" name>
+      </div>
+      <div class="form-name">
+        <label for="IDNumber">身份证号:</label>
+        <input class="input-style" id="IDNumber" type="text" value="" name="IDNumber" placeholder="请输入身份证号" IDNumber>
+      </div>
+      <div style="height: 16px;"></div>
+      <div class="form-name">
+        <label for="sex">性别:</label>
+        <input type="radio" name="sex" name="man" value="" checked>男
+        <input type="radio" name="sex" name="woman" value="">女
+      </div>
+      <div style="height: 16px;"></div>
+      <button class="commit" commit>提交</button>
+    </form>
+  </div>  
+  
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+  <script src="./v.js"></script>
+  <script>
+    (function(){
+      $("[commit]").on('click',function(){
+        var data = {
+          name:$("[name]").val,
+          IDNumber:$("[IDNumber]").attr('value'),
+          sex:$("input[type='radio']:checked").val()
+        }
+        checkForm(data)
+      })
+    })()
+
+    function checkForm(data){
+      // each(fn,data)
+      for(var i in data){
+        var check = [
+          [v.isEmpty,v.isNumber]
+
+        ]
+      }
+    }
+
+
+
+    
+    function each(fn,xs){
+      for(var i=0;i<xs.length;i++){
+        fn(xs[i])
+      }
+    }
+  </script>
+
+</body>
+</html>

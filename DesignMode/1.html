@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>设计模式-图片懒加载</title>
+</head>
+<body>
+  
+  <script>
+    var imgFunc = (function() {
+      var imgNode = document.createElement('img')
+      document.body.appendChild(imgNode)
+      return {
+        setSrc: function (src) {
+          debugger
+          imgNode.src = src
+        }
+      }
+    })()
+
+    // console.log(imgFunc)
+
+    var proxyImage = (function () {
+      var img = new Image()
+      // img的onload事件，是指，img的src赋值以后
+      img.onload = function () {
+        imgFunc.setSrc(this.src)
+      }
+      return {
+        setSrc: function(src) {
+          debugger
+          imgFunc.setSrc('https://src.wuage.com/public/149933255933693105874_281_281.jpg_56px')
+          img.src = src
+        }
+      }
+    })()
+
+    proxyImage.setSrc('https://src.wuage.com/public/152273700387139476456_750_750.jpg_56px')
+
+    function addImg(isrc){
+      var Img = new Image();
+      Img.src = isrc;
+
+      Img.onload = function (){
+        debugger
+        document.body.appendChild(Img);
+      }
+
+    }
+    addImg('https://src.wuage.com/public/152273700387139476456_750_750.jpg_56px')
+  </script>
+</body>
+</html>

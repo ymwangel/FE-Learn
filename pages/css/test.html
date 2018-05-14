@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试z-index</title>
+  <style>
+    .container{
+      width: 100%;
+      height: 100px;
+      background-color: red;
+      position: relative;
+      z-index: 10;
+    }
+    .box1{
+      width: 100%;
+      height: 150px;
+      background-color: black;
+     /* position: relative;
+      z-index: 9;
+      margin-top:-20px;*/
+      position: absolute;
+      z-index: 9;
+      top: 200px;
+    }
+    .con{
+      width: 500px;
+      height: 80px;
+      background-color: #316ccb;
+      position: absolute;
+      z-index: 14;
+    }
+    .A{
+      /*width: 200px;
+      height: 200px;*/
+      background-color: red;
+      position: absolute;
+    }
+    .B{
+      /*width: 200px;
+      height: 200px;*/
+      background-color: transparent;
+      position: absolute;
+    }
+    .hid{
+      width: 200px;
+      /*height: 200px;*/
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      background-color: #316ccb;
+      font-size: 12px;
+    }
+    .hid-ab{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: -10px;
+      background-color: red;
+      color: #fff;
+    }
+    .hid .hid-sub{
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <p>只要box1的z-index比container的z-index低，无论con的z-index设置多高，都不会覆盖container</p>
+
+  <!-- <div class="container">
+    
+  </div>
+  
+  <div class="box1">
+    <div class="con"></div>
+  </div> -->
+  <!-- <div class="A">
+    <p>睡醒哦窗口；老妈看完呢好玩iuojdqkmv</p>
+  </div>
+  <div class="B">
+    <p>38485rtgfiobv</p>
+  </div> -->
+    
+  <div class="hid">
+    
+    <div class="hid-sub">
+      测试overflow:hidden对position:relative/absolute的影响:
+    overflow:hidden使得position:relative/absolute失去效果，
+    position:relative/absolute的元素，超出父元素（.hid）会overflow：hidden掉
+      <div class="hid-ab">
+        sfkjl
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>

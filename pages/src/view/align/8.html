@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>line-height</title>
+  <style>
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    body{
+      font-size: 0px;
+      line-height: 0px;
+    }
+    .test{
+      font-size: 12px;
+      line-height: 30px;
+      background-color: red;
+    }
+    .test-inline-block{
+      display: inline-block;
+      font-size: 12px;
+      line-height: 30px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="test">block元素：测试inline-height与inline-block   <em style="line-height: 80px;">en</em></div>
+  <span id="inline" style="color: blue;font-family: 'Microsoft YaHei'" class="test">inline（行内元素）元素：测试inline-height与inline-block</span>
+  <br>
+  <span id="inline" style="color: blue;font-family: 'Source Code Pro'" class="test">inline（行内元素）元素：测试inline-height与inline-block</span>
+  <br>
+  <span id="inline" style="color: blue;font-family: 'Lucida Console'" class="test">inline（行内元素）元素：测试inline-height与inline-block</span>
+  <br>
+  <span class="test-inline-block">inline（行内元素）元素：测试inline-height与inline-block</span>
+
+  <!-- 图片完全垂直居中 -->
+  <div style="line-height: 200px;text-align: center;font-size: 0px;background-color: #f1f1f1;">
+    <img src="" alt="" width="100" height="100" style="box-sizing: border-box;vertical-align: middle;">
+  </div>
+
+  <div style="height: 16px;"></div>
+ 
+  <div style="height: 100px;"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
+  <script>
+    (function(){
+      console.log($("#inline").height())
+      console.log(document.getElementById("inline").style)
+      console.log(window.getComputedStyle(document.getElementById("inline")))
+    })()
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>下拉菜单</title>
+</head>
+<body>
+
+  <select name="dropDown" id="dropDown">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+<script src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+<script>
+  (function () {
+    console.log($("#dropDown option:selected").val())
+    $("#dropDown").on('change',function(){
+      console.log($("#dropDown option:selected").val())
+    })
+  })()
+</script>
+  
+</body>
+</html>

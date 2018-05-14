@@ -1,0 +1,78 @@
+<!-- 垂直轮播 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>垂直轮播</title>
+  <link rel="stylesheet" href="https://static.wuage.com/m-search/lib/reset.css">
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    ul,li{
+      list-style:none;
+    }
+    .mod-slider{
+      margin-top: 10px;
+      width: 665px;
+      height: 264px;
+      box-sizing: border-box;
+      padding: 42px 32px 40px 32px;
+      background-color: #FFE9E9;
+      border:1px solid #F1A4A4;
+      font-size: 28px;
+      color: #222222;
+      line-height: 40px;
+      border-radius: 6;
+    }
+    .container{
+      height: 100%;
+      overflow: hidden;
+    }
+    .list-box{
+      height: 100%;
+      position: relative;
+      top: 0px;
+    }
+    .list-box>li{
+      margin-top: 22px;
+    }
+    .list-box>li:first-child{
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="mod-slider">
+    <div class="container">
+      <ul class="list-box">
+        <li idx="0">北京钢铁公司</li>
+        <li idx="1">上海钢铁公司</li>
+        <li idx="2">天津钢铁公司</li>
+        <li idx="3">深圳钢铁公司</li>
+        <li idx="4">石家庄钢铁公司</li>
+      </ul>
+    </div>
+  </div>
+  <script src="http://static.wuage.com/goods/lib/jquery.min.js"></script> 
+  <script>
+    var ul = $(".list-box")
+    var timer = null
+    var origin = 62
+    carousel()
+    function carousel() {
+      timer = setInterval(function () {
+        ul.animate({top:-origin},500,function() {
+          ul.stop().css({top:-0}).find("li:first-child").appendTo(ul)
+        })
+      },1500)
+    }
+    ul.hover(function(){
+      clearInterval(timer) 
+    },function() {
+      carousel()
+    })
+  </script>
+</body>
+</html>

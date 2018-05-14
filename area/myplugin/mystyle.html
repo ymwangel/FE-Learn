@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>原生js封装插件</title>
+</head>
+<body>
+  <p id="test"></p>
+
+  <script type="text/javascript" src="./mystyle.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      var a = new SetStyles({
+        container: "#test",
+        background: "#fff",
+        textAlign: "center",
+        text : function(){
+          return '原生js封装插件'
+        }
+      })
+    }
+  </script>
+
+</body>
+</html>

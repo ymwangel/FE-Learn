@@ -4,64 +4,153 @@
 	<meta charset="UTF-8">
 	<title>轮播</title>
 	<style>
-		.banner{
+		.mod-banner{
 			width:200px;
-			height: 200px;
-			font-size: 0px;
-			margin: 0 auto;
+			position: relative;
+			background-color: #f1f1f1;
 			overflow: hidden;
-			border:1px solid red;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.clearfix{
+			zoom:1;
+		}
+		.clearfix:after{
+			content: '';
+			display: block;
+			height: 0px;
+			clear: both;
+			overflow: hidden;
+		}
+
+		.banner-list{
+			width: 100%;
+			height: 30px;
+			text-align: center;
+			box-sizing: border-box;
+			padding-left:0px;
+			font-size: 0px;
+			white-space: nowrap;
+			position: relative;
+			left:0px;
+		}
+		.list-item{
+			width: 100%;
+			display: inline-block;
+			font-size: 12px;
+			line-height: 30px;
+			color: #316ccb;
 			box-sizing: border-box;
 		}
-		img{
+		.function-bar{
+			width: 100%;
+			box-sizing: border-box;
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+		.left-scroll{
+			cursor: pointer;
+		}
+		.right-scroll{
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.tab-dot{
+			margin-top: 10px;
+			font-size: 0px;
+			text-align: center;
+		}
+		.round-tab{
 			display: inline-block;
-			width:200px;
-			height: 200px;
-			transition: 2s margin-left linear;			
+			width: 10px;
+			height: 10px;
+			border-radius:50%;
+			background-color: #959595;
+			cursor: pointer;
 		}
-		.hidden{
-			display: none;
-			
+		.round-tab:not(:last-child){
+			margin-right: 10px;
 		}
-		
+		.tab-active{
+			background-color: #656565;
+		}
 	</style>
 </head>
 <body>
-	
-	<div class="banner">
-		<img class="active" src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="1">
-	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="2">
-	    <!-- <img src="http://ww1.sinaimg.cn/large/006y8mN6gw1fa7kaed2hpj30sg0l9q54.jpg" alt="3">
-	    <img src="http://ww4.sinaimg.cn/large/006y8mN6gw1fa5obmqrmvj305k05k3yh.jpg" alt="4"> -->
-	    
+	<div class="mod-banner">
+		<ul class="banner-list">
+			<li class="list-item">近7日成交量>=50万--1</li>
+			<li class="list-item">近7日成交量>=50万--2</li>
+			<li class="list-item">近7日成交量>=50万--3</li>
+			<li class="list-item">近7日成交量>=50万--4</li>
+		</ul>
+		<div class="function-bar clearfix">
+			<i class="left-scroll fl"><</i>
+			<i class="right-scroll fr">></i>
+		</div>
+		<div class="tab-dot">
+			<div class="round-tab tab-active"></div>
+			<div class="round-tab"></div>
+			<div class="round-tab"></div>
+			<div class="round-tab"></div>
+		</div>
 	</div>
-
 	<script src="https://static.wuage.com/goods/lib/jquery.min.js"></script>
-	<script>
-		(function () {
+	<script type="text/javascript">
+		window.onload=function() {
+			var scrollN = 0;
+			var content = $('.banner-list')
+			var len = $('.list-item').length
+			$('.left-scroll').on('click',function(){
+				if(scrollN <= 0){
+					void null
+				}else{
+					scrollN --
+					setContent(scrollN)
+				}
+			})
+			$('.right-scroll').on('click',function(){
+				if(scrollN >= len-1){
+					void null
+				}else{
+					scrollN++
+					setContent(scrollN)
+				}
+			})
 
-			main($(".banner"))
+			$('.round-tab').on('click',function() {
+				var index = $(this).index()
+				mockTabClick(index)
+				setContent(index)
+			})
 
-		})()
+			function mockTabClick (n){
+				$('.round-tab').eq(n).addClass('tab-active').siblings().removeClass('tab-active')
+			}
 
-		function main(div){
-			
+			function setContent(n){
+				content.css({
+					left: (0-n*200)+'px'
+				})
+				mockTabClick(n)
+			}
 		}
 
-		function fadeout(div){
-			setTimeout(function(){
-				div.addClass('img-fade')
-				div.removeClass('active')
-			},1000)
-		}
-		function fadein(div){
-			div.addClass("active")
-			div.addClass("img-show")
-		}
 
 	</script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

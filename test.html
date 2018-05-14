@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>101跨年比价</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <style>
+    body{
+      background-color:#EA323D;
+    }
+    a,a:hover{
+      text-decoration:none;
+    }
+    .fl{
+      float:left;
+    }
+    .fr{
+      float:right;
+    }
+    .clearfix{
+      zoom:1;
+    }
+    .clearfix:after{
+      content:'';
+      display:block;
+      height:0;
+      clear:both;
+      overflow:hidden;
+    }
+    .txt-style{
+      font-size:28px;
+      line-height:40px;
+      color:#222222;
+    }
+    .layout-seller-quotation{
+      width:100%;
+      background-color:#EA323D;
+    }
+    .mod-banner{
+      width:100%;
+    }
+    .mod-banner>img{
+      width:100%;
+    }
+    .part{
+      width:100%;
+      box-sizing:border-box;
+      padding:0 26px;
+      position:relative;
+      text-align:center;
+    }
+    .part .one-icon{
+      width:80px;
+      height:70px;
+      position:absolute;
+      top:-10px;
+      left:50%;
+      margin-left:-40px;
+    }
+    .part .part-con{
+      width:100%;
+      background-color:#fff;
+      box-sizing:border-box;
+      padding:68px 0 84px 0;
+    }
+    .part-title{
+      width:100%;
+      font-size:36px;
+      line-height:50px;
+      color:#EE365A;
+      text-align:center;
+    }
+    .part-rule{
+      margin-top:29px;
+      font-size:26px;
+      line-height:37px;
+      color:#222222;
+      margin:29px 20px 0 21px;
+      text-align:left;
+    }
+    .part-award{
+      display:flex;
+      display: -webkit-box;
+      display: -moz-box; 
+      display: -ms-flexbox;
+      display: -webkit-flex;   
+      flex-direction:row;
+      justify-content:space-around;
+      margin:24px 17px 0px 16px;
+      box-sizing:border-box;
+      padding-bottom:50px;
+      border-bottom:1px dashed #EE1540;
+    }
+    .part-award>img{
+      width:211px;
+      height:203px;
+    }
+    .part-ranking{
+      width:100%;
+      box-sizing:border-box;
+      padding:50px 16px 0 17px;
+    }
+    .part-slider{
+      width: 100%;
+      height: 264px;
+      box-sizing: border-box;
+      padding: 42px 32px 40px 32px;
+      background-color: #FFE9E9;
+      border:1px solid #F1A4A4;
+      border-radius: 6px;
+      margin-top:24px;
+      text-align:left;
+    }
+    .container{
+      height: 100%;
+      overflow: hidden;
+    }
+    .list-box{
+      height: 100%;
+      position: relative;
+      top: 0px;
+    }
+    .list-box>li{
+      margin-top: 22px;
+    }
+    .list-box>li:first-child{
+      margin-top: 2px;
+    }
+    .go-quotation{
+      display:block;
+      width:100%;
+      height:88px;
+      border-radius:44px;
+      background: -webkit-linear-gradient(rgba(253,239,110,1) 0%, rgba(255,250,192,1) 100%);
+      background: -o-linear-gradient(rgba(253,239,110,1) 0%, rgba(255,250,192,1) 100%);
+      background: linear-gradient(rgba(253,239,110,1) 0%,rgba(255,250,192,1) 100%);
+      position:absolute;
+      bottom: -40px;
+      left: 0;
+      text-align:center;
+      line-height:88px;
+      font-size:34px;
+      color:#EE1640;
+    }
+    .separate-line{
+      margin:0px 19px 0px 17px;
+      height:0px;
+      border-bottom:1px dashed #EE1540;
+    }
+    .part-tip{
+      margin:24px;
+    }
+    .part-tip .tip-header{
+      font-size:28px;
+      color:#222222;
+      line-height:40px;
+      text-align:left;
+    }
+    .part-tip .tip-lists{
+      width:100%;
+      margin-top:13px;
+      text-align:left;
+    }
+    .part-tip .tip-lists .list-item{
+      margin-top:24px;
+      font-size:0px;
+    }
+    .part-tip .tip-lists .list-item:first-child{
+      margin-top:0px;
+    }
+    .part-tip .tip-order{
+      vertical-align:middle;
+      width:30px;
+      height:30px;
+      margin-left:15px;
+    }
+    .part-tip .tip-txt{
+      vertical-align:middle;
+      margin-left:15px;
+    }
+    .intro-banner{
+      margin-top:104px;
+      text-align:center;
+    }
+    .intro-banner>img{
+      width:100%;
+      height:62px;
+    }
+    .part .part-winner{
+      width:100%;
+      background-color:#fff;
+      text-align:center;
+      box-sizing:border-box;
+      padding-bottom:48px;
+    }
+    .winner-box{
+      width:100%;
+      height:246px;
+      box-sizing:border-box;
+      border:1px solid #F1A4A4;
+      border-radius:6px;
+      padding:42px 24px 40px 24px;
+      background-color:#FFE9E9;
+      margin-top:24px;
+    }
+    .winner-box>li{
+      margin-top:22px;
+    }
+    .winner-box>li:first-child{
+      margin-top:0px;
+    }
+    .instruction{
+      margin-top:80px;
+      text-align:center;
+      padding-bottom:152px;
+    }
+    .title-img{
+      width:100%;
+      height:0px;
+      border-bottom:1px solid #FFE266;
+      position:relative;
+      font-size:36px;
+      line-height:50px;
+      color:#FFE266;
+    }
+    .title-img .title-txt{
+      width:210px;
+      text-align:center;
+      display:block;
+      box-sizing:border-box;
+      padding:0 32px;
+      position:absolute;
+      left:50%;
+      top:-25px;
+      background-color:#EA323D;
+      margin-left:-105px;
+      font-size:36px;
+      line-height:50px;
+    }
+    .instruction .tip-lists{
+      padding-top:65px;
+      color:#fff;
+      text-align:left;
+    }
+    .instruction .tip-lists .list-item{
+      margin-bottom:20px;
+    }
+    .instruction .tip-lists .list-item:last-child{
+      margin-bottom:0px;
+    }
+    .instruction .tip-lists .tip-txt{
+      font-size:20px;
+      line-height:40px;
+      vertical-align:middle;
+      margin-left:15px;
+    }
+    .instruction .tip-lists .tip-order{
+      width:28px;
+      height:28px;
+      vertical-align:middle;
+      margin-left:15px;
+    }
+
+    .wap-btn{
+      width:100%;
+      font-size:0px;
+      box-sizing:border-box;
+      margin:-98px 0px 90px 0px;
+      padding:0 26px;
+    }
+    .wap-btn .spec-btn{
+      display:inline-block;
+      width:49%;
+      text-align:center;
+      height:88px;
+      line-height:88px;
+      font-size:34px;
+      color:#EE1640;
+      background: -webkit-linear-gradient(rgba(253,239,110,1) 0%, rgba(255,250,192,1) 100%);
+      background: -o-linear-gradient(rgba(253,239,110,1) 0%, rgba(255,250,192,1) 100%);
+      background: linear-gradient(rgba(253,239,110,1) 0%,rgba(255,250,192,1) 100%);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="record-box">
+    <div class="dialog-header clearfix">
+      <strong class="fl">违规记录</strong>
+      <img src="https://img.wuage.com/15109012224507close.png" class="close fr">
+    </div>
+    <div class="dialog-content">
+      <p class="record-intro clearfix">
+        <p class="fl">截止 2018/01/9 违规总扣分 
+          <span style="color: rgb(255, 115, 0);">3</span>
+          <span> 分 ，违规超30分将关闭店铺</span>
+        </p>
+        <a href="https://dt.wuage.com/ptgz/201709/t20170929_118261.html" target="_blank" class="fr record-rule">规则说明</a>
+      </p>
+      <table class="record-table">
+        <thead class="thead">
+          <tr>
+            <th style="width: 49px;">序号</th>
+            <th style="width: 97px;">违规类型</th>
+            <th style="width: 169px;">违规原因</th>
+            <th style="width: 77px;">处罚结果</th>
+            <th style="width: 90px;">处理时间</th>
+            <th>违规扣分</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr>
+            <td>1</td>
+            <td>违反买家保障服务规则</td>
+            <td>未按线上订单约定的时范围发货的未按线...<span class="fr" style="color: rgb(49, 108, 203); cursor: pointer;">查看详情</span></td>
+            <td>限权30天</td>
+            <td>2027/12/23</td>
+            <td style="color: rgb(255, 115, 0);">3分</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>知识产权侵权</td>
+            <td>未经权利人许可擅自使用他人持有的图片...<span class="fr" style="color: rgb(49, 108, 203); cursor: pointer;">查看详情</span></td>
+            <td>警告</td>
+            <td>2017/11/11</td>
+            <td style="color: rgb(255, 115, 0);">3分</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>报价单违规</td>
+            <td>类目放置错误</td>
+            <td>限权7天</td>
+            <td>2027/12/21</td>
+            <td style="color: rgb(255, 115, 0);">3分</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>发布违禁信息</td>
+            <td>发布不实信息；冒用或乱用店铺星价的发...<span class="fr" style="color: rgb(49, 108, 203); cursor: pointer;">查看详情</span></td>
+            <td>限权10天</td>
+            <td>2027/12/09</td>
+            <td style="color: rgb(255, 115, 0);">3分</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>违反买家保障服务规则</td>
+            <td>未按线上订单约定的时范围发货的未按线...<span class="fr" style="color: rgb(49, 108, 203); cursor: pointer;">查看详情</span></td>
+            <td>限权7天</td>
+            <td>2017/11/04</td>
+            <td style="color: rgb(255, 115, 0);">2分</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="record-gangding">如有疑问，请联系在线客服<a target="_self" href="javascript:fe.im('4lbnpyh4','title')" class="data-tracelog"><img src="https://img.wuage.com/151091117879040gangding.png" class="gangding"></a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <a hidefocus="true" target="_self" class="consult data-tracelog" href="javascript:fe.im('4lbnpyh4','title')"">拍档专线</a>
+  <div class="layout-seller-quotation">
+    <div class="mod-banner">
+      <img src="https://medici.wuage.com/img/M_0079E4/151390975188307053382764570415.png" alt="">
+    </div>
+    <div class="part" style="margin-bottom: 114px;">
+      <img class="one-icon" src="https://medici.wuage.com/img/M_0079E4/15139112669563217693546321243.png" alt="">
+      <div class="part-con">
+        <p class="part-title">报价次数大礼包</p>
+        <p class="part-rule">规则：活动期间内对询价单的累计有效报价积分（含主动报价和被邀约后报价）由高至低顺次排名；PC报价一次得1分，APP报价一次得2分。</p>
+        <div class="part-award">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208281849808760951273143.png" alt="">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208435772812719130888581.png" alt="">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208564326484499447979033.png" alt="">
+        </div>
+        <div class="part-ranking">
+          <p class="part-title">报价次数龙虎榜</p>
+          <div class="part-slider txt-style">
+            <div class="container">
+              <ul class="list-box">
+                <li class="clearfix txt-style">
+                  <span class="fl">五阿哥公司</span>
+                  <span>已成功报价23次</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="xxx" target="_blank" class="go-quotation">点我立即报价</a>
+    </div>
+
+    <div class="wap-btn clearfix">
+      <a href="xxx" target="_blank" class="spec-btn fl" title="立即报价">点我立即报价</a>
+      <a href="xxx" target="_blank" class="spec-btn fr" title="下载采钢宝APP">立即下载采钢宝APP</a>
+    </div>  
+
+    <div class="part" style="margin-bottom: 114px">
+      <img class="one-icon" src="https://medici.wuage.com/img/M_0079E4/151393097182337977642635814846.png" alt="">
+      <div class="part-con">
+        <p class="part-title">邀约报价速度大礼包</p>
+        <p class="part-rule">规则：活动期间对邀约询价单的有效报价速度排名由快至慢顺次排名，参与本排名需在活动期间对邀约询价单有效报价5次及以上。</p>
+        <div class="part-award">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208281849808760951273143.png" alt="">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208435772812719130888581.png" alt="">
+          <img src="https://medici.wuage.com/img/M_0079E4/15139208564326484499447979033.png" alt="">
+        </div>
+        <div class="part-ranking">
+          <p class="part-title">邀约报价速度龙虎榜</p>
+          <div class="part-slider">
+            <div class="container">
+              <ul class="list-box">
+                <li class="clearfix txt-style">
+                  <span class="fl">五矿电子</span>
+                  <span class="fr">已成功报价56次</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="xxx" target="_blank" class="go-quotation">点我立即报价</a>
+    </div>
+
+    <div class="wap-btn clearfix">
+      <a href="xxx" target="_blank" class="spec-btn fl" title="立即报价">点我立即报价</a>
+      <a href="xxx" target="_blank" class="spec-btn fr" title="下载采钢宝APP">立即下载采钢宝APP</a>
+    </div>
+
+    <div class="part" style="margin-bottom: 104px">
+      <img class="one-icon" src="https://medici.wuage.com/img/M_0079E4/151393110797219751312350854278.png" alt="">
+      <div class="part-con">
+        <p class="part-title">成交单数大礼包</p>
+        <p class="part-rule">规则：活动期间针对询价单内的需求报价后达成交易的商家进行现金奖励；每单奖励100元，活动期间每个商家最高可获得2000元。</p>
+        <div style="height: 24px"></div>
+        <div class="separate-line"></div>
+        <div class="part-tip">
+          <p class="tip-header">注意事项：</p>
+          <ul class="tip-lists">
+            <li class="list-item">
+              <img class="tip-order" src="https://medici.wuage.com/img/M_0079E4/151416940236148387903184629977.png" alt="">
+              <span class="tip-txt txt-style">为保障您的交易安全，平台推荐在线交易。如线下交易需买家提供交易凭证（发票或在以下三种凭证中任意提供两种：银行水单、交易合同、收/发货单）。</span>
+            </li>
+            <li class="list-item">
+                <img class="tip-order" src="//medici.wuage.com/img/M_0079E4/15141694154952321972439531237.png" alt="02">
+                <span  class="tip-txt txt-style">交易买家必须是真实用钢企业（非个人）。凭证中买卖双方企业名称需要与询价单双方企业名称一致。平台审核通过后即可获得奖励。</span>
+            </li>
+            <li class="list-item">
+                <img class="tip-order" src="//medici.wuage.com/img/M_0079E4/15141694266543176804061513394.png" alt="03">
+                <span  class="tip-txt txt-style">有效的成交订单需满足单笔订单金额不低于人民币3000元，且是于2018年1月1日至2018年2月10日前达成的有效交易。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="xxx" target="_blank" class="go-quotation">点我立即报价</a>
+    </div>
+
+    <div class="wap-btn clearfix" style="margin-top:-88px;">
+      <a href="xxx" target="_blank" class="spec-btn fl" title="立即报价">点我立即报价</a>
+      <a href="xxx" target="_blank" class="spec-btn fr" title="下载采钢宝APP">立即下载采钢宝APP</a>
+    </div>
+
+    <div class="intro-banner">
+      <img src="https://medici.wuage.com/img/M_0079E4/1513932962616022038835333660245.png" alt="">
+    </div>
+
+
+    <div class="part" style="margin-top:20px;">
+      <div class="part-winner">
+          <div class="part-ranking" style="padding-top:48px;">
+              <p class="part-title">报价次数获奖名单</p>
+              <div class="part-slider txt-style">
+                  <div class="container">
+                    <ul class="list-box">
+                      <li class="clearfix txt-style">
+                          <span class="fl">一等奖</span>
+                          <span class="fr">xxxx</span>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="part-ranking" style="padding-top:48px;">
+             <p class="part-title">邀约报价速度获奖名单</p>
+             <div class="part-slider txt-style">
+                  <div class="container">
+                    <ul class="list-box">
+                      <li class="clearfix txt-style">
+                          <span class="fl">一等奖</span>
+                          <span class="fr">xxx</span>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="part instruction">
+      <div class="title-img">
+          <p class="title-txt">活动说明</p>
+      </div>
+      <ul class="tip-lists">
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/151416944818923345434246584773.png" alt="01">
+            <span class="tip-txt">活动对象：五阿哥钢铁平台认证卖家。</span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/15141694600456765441049356014.png" alt="02">
+            <span class="tip-txt">活动时间： 2018年1月1日-2018年1月31日。</span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/15141694718899966890700161457.png" alt="03">
+            <span class="tip-txt">奖励发放：“报价次数”及“邀约报价速度”两项奖金将在2月6日前发放，“成交单数”奖金在2018年2月14日前发放；发放至用户绑定的支付宝账户（APP通过“工作台-报价单管理”绑定支付宝账号；PC通过“卖家中心-报价管理”绑定支付宝账号）</span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/15141694922549547854671254754.png" alt="04">
+            <span class="tip-txt">龙虎榜数据为评比期间内的数据结果，当日的数据将在次日展现。</span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/151416950356103597855777479708.png" alt="05">
+            <span  class="tip-txt"> 详细活动说明可点击：<a href="{{activity_link}}" target="_blank" style="color:#FFDB7E">【跨年报价大惠战，万元现金送不停】活动公告</a></span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/151416951398536744660465046763.png" alt="06">
+            <span class="tip-txt">活动期间如违反五阿哥平台运营规则，取消活动资格</span>
+          </li>
+          <li class="list-item">
+            <img class="tip-order" load-src="//medici.wuage.com/img/M_0079E4/15141695240358313487975392491.png" alt="07">
+            <span class="tip-txt">五阿哥钢铁平台保留法律范围内对活动的解释权。</span>
+          </li>
+      </ul>
+  </div>
+
+  </div>
+
+</body>
+</html>

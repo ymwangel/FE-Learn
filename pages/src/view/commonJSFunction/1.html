@@ -58,8 +58,32 @@
       return xs.slice(1)
     }
 
-    
-
+    function filter(fn,xs){
+      var r = [];
+      for(var i=0;i<xs.length;i++){
+        if(fn(xs[i])){
+          r.push(xs[i])
+        }
+      }
+      return r
+    }
+    var xs = [1,2,3,45,534]
+    var r = filter(function(item){
+      if(item>100){
+        return item
+      }else{
+        null
+      }
+    },xs)
+    // console.log(r)
+    function uniq(arr){
+       return arr.length == 0 ? []
+       : arr.length == 1 ? arr
+       : [arr[0]].concat(uniq(filter(a=>a.city!=arr[0].city,arr.slice(1))))
+    }
+    var a = [{"province":"山东","city":"青岛"},{"province":"广东","city":"广州"},{"province":"山东","city":"青岛"}]
+    var b = [10,3,234,10,43,45,234]
+    console.log(uniq(a))
 	</script>
 </body>
 </html>

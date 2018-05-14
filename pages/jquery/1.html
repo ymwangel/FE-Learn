@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jquery源码test</title>
+</head>
+<body>
+  
+  <p id="aa">aa</p>
+  <script  type="text/javascript" src="https://static.wuage.com/buyer/lib/jquery.min.js"></script>
+  <script type="text/javascript">
+    $.prototype === $.fn         //true
+    $ === $.fn.constructor       //true
+    // function DOMEval( code, doc ) {
+    //   debugger
+    //   doc = doc || document;
+
+    //   var script = doc.createElement( "script" );
+
+    //   script.text = code;
+    //   doc.head.appendChild( script ).parentNode.removeChild( script );
+    // }
+
+    // DOMEval('alert(1)',document)
+    $.extend({
+      hello:function(){alert('hello')}
+    })
+    $.fn.extend({
+      hello:function(){alert('hello')}
+    })
+    $.hello()
+    $("#aa").hello()
+  </script>
+  <script src="./2.js"></script>
+</body>
+</html>

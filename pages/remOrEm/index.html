@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>rem、em、px</title>
+  <style>
+    html{
+      font-size: 1.5em;
+      padding: 10rem;
+    }
+    .aa{
+      /*font-size: 14px;*/
+      padding: 10em;
+    }
+  </style>
+</head>
+<body>
+  <div class="aa">lsj</div>
+  <ul>
+    <li>rem单位翻译为像素值是由html元素的字体大小决定的。此字体大小会被浏览器中字体大小的设置影响（浏览器默认的字体大小），除非显示从重写一个具体单位</li>
+    <li>em单位转为像素值，取决于他们使用的字体大小，此字体大小受从父元素继承过来的字体大小影戏，除非显示重写一个具体单位</li>
+    <li>em：一个普遍的误解，认为em单位是相对于父元素的字体大小。事实上，根据W3标准，<span style="color: #316ccb;">它们是相对于使用em单位的元素的字体大小</span></li>
+  </ul>
+</body>
+</html>
