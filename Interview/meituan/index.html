@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>美团面试题</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+  <div>
+    <label for="male">Male</label>
+    <input type="radio" id="male" name="sex" value="male">
+    <label for="female">Female</label>
+    <input type="radio" id="female" name="sex" value="female">
+    <br>
+    <label for="la" id="dd">隐藏input</label>
+    <input type="text" id="la" name="s">
+  </div>
+
+  <h3>HTML部分：</h3>
+
+  <div>
+    <p><strong>一：HTML + css + js 实现开关</strong></p>
+    <!-- HTML + css + js 实现开关 -->
+    <div class="el-switch">
+      <input type="checkbox" name="" true-value="true" class="el-switch__input" id="sw">
+      <span class="el-switch__core"></span>
+    </div>
+  </div>
+
+  <div class="sw-box">
+    <!-- HTML + css -->
+    <input type="checkbox" name="aa" id="yes" class="chooseBtn">
+    <label for="yes" class="choose-label"></label>
+  </div>
+
+  <div>
+    <p><strong>二：DOM的attribute属性和property属性区别</strong></p>
+    <!-- DOM的attribute属性和property属性区别 -->
+    <input id="in_1" value="1" sth="whatever">
+    <ul>
+      <li>1. DOM有其默认的基本属性，而这些属性就是所谓的property，例如：id、value等 无论如何，它们都会在初始化的时候在DOM对象上创建</li>
+      <li>
+        2. HTML标签中自定义的属性和值都会保存在该DOM对象的attributes属性里面。这些attribute属性的 javascript中的类型是attr，例如：sth属性
+      </li>
+      <li>3. property能够从attributed中得到同步</li>
+      <li>4. attribute不会同步到property上的值</li>
+      <li>5. attribute和property之间的数据绑定是单向的，attribute > property</li>
+      <li>6. 更改property和attribute上的任意值，都会将更新反映到HTML页面中</li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>三：浏览器内核</strong></p>
+    <ul>
+      <li>1. 浏览器内核分为：渲染引擎（Layout engineer 或者 Rendering Engine）、 JS引擎</li>
+      <li>2. 它负责取得网页的内容（HTML、XML、图像等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机</li>
+      <li>3. JS引擎：解析javascript语言，执行javascript语言来实现网页的动态效果</li>
+      <li>4. 平时说的V8引擎，是Chrome的Javascript引擎</li>
+    </ul>
+    <p>内核分类：</p>
+    <ul>
+      <li>1. IE内核：Trident内核：</li>
+      <li>2. Gecko：Fixbox内核：</li>
+      <li>3. webkit：，webkit鼻祖是Safari，</li>
+      <li>Chromium／Blink内核 ： 来自开源引擎webkit，</li>
+      <li>Opera浏览器：</li>
+    </ul>
+  </div> 
+
+  <div>
+    <p><strong>四：img的alt属性和title属性区别：</strong></p>
+    <ul>
+      <li>1. alt用于图片没有显示时在图片显示区域显示一个说明文字</li>
+      <li>2. title表示鼠标在图片上停留时，显示一个悬浮框，显示其中的文字</li>
+    </ul> 
+  </div> 
+
+  <div>
+    <p><strong>五：viewport常用的属性设置：移动端</strong></p>
+    <meta name="vewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <ul>
+      <li>1. width：控制viewport的大小，可以指定一个值，如果600，或者特殊的值，如device-width为设备的宽度（单位为缩放为100%时的css像素）</li>
+      <li>2. height：和width相对应，指定高度</li>
+      <li>3. initial-scale：初始缩放比例，也就是当页面第一次load时的缩放比例</li>
+      <li>4. maximum-scale：允许用户缩放到的最大比例</li>
+      <li>5. minimum-scale：允许用户缩放到的最小比例</li>
+      <li>6. user-scalable：用户是否可以手动缩放</li>
+    </ul>
+  </div>  
+
+  <div>
+    <p><strong>六：strong 和 em的区别： 都是表达要素</strong></p>
+    <ul>
+      <li>
+        <span> 1. strong 表示html页面上的强调：</span>
+        <ul>
+          <li>(1). 重要性：可用于标题、说明、或者段落上、来显示文字的重要性</li>
+          <li>(2). 严重性：可被用来标记警告或者警示标志</li>
+          <li>(3). 紧急性：可以被用来表示需要被尽快看见的部分</li>
+        </ul>
+      </li>
+      <li>2. em：表示句子中的强调（即强调语义）</li>
+      <li>3. strong标签的文字，加粗</li>
+      <li>4. em标签的文字为斜体</li>
+
+    </ul> 
+  </div>  
+
+
+  <h2 style="color: red;">CSS部分</h2>    
+  <div>
+    <p><strong>七：CSS优先级</strong></p>
+    <div>内联样式 > !important > id选择器 > 类选择器 >类型选择器和伪元素</div>
+  </div>
+  <div>
+    <p><strong>八：移动端屏幕适配</strong></p>
+    <ul>
+      <li>
+        <p>1. 自适应屏幕宽度：viewport</p>
+        <ul>
+          <li><pre>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"></pre>
+          </li>
+        </ul>
+      </li>
+      <li>2. 使用框架搭页面：bootstrap、ElementUI</li>
+      <li>3. 宽度的严格布局书写：例如：使用相对宽度的布局</li> 
+      <li>4. 图片自适应：img{max-witdth: 100%} ,老的IE不支持max-width,所以设置图片：img:{width: 100%}</li>
+      <li>
+        <p>5. border： 1px问题：</p>
+        <p>通常是给元素order-bottom：1px solid #ddd，然后通过transform: scaleY(.5)来达到0.5px的效果</p>
+      </li>
+      <li>6.图片高清问题：通过css媒体查询或者js条件判断，在不同的dpr下加载不同尺寸的图片</li>
+      <li>
+        <p><strong>7.屏幕适配布局问题</strong></p>
+        <ul>
+          <li>
+            <p><strong>1. 响应式布局：流式布局+媒体查询</strong></p>
+            <ul>
+              <li>用来解决不同宽度的布局问题，父级宽度不够的时候，子节点会“挤下去”，--使用CSS3，根据屏幕分辨率进行不同样式的应用</li>
+              <li>
+                <p><strong>优劣：</strong></p>
+                <ul>
+                  <li>这种布局通吃PC和移动端，做到精细处，两者的效果都很好</li>
+                  <li>缺点是媒体查询是有限的，也就是可以枚举出来的</li>
+                  <li>对设计要求简单、清晰、复杂的设计稿会直接弄死前端，同事需要多个设计稿</li>
+                  <li>CSS3低版本浏览器不支持</li>
+                </ul> 
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>2. 伸缩布局：使用flexbox，有兼容性问题</strong></p>
+            <ul>
+              <li>整体思路：考虑一个元素变成一个伸缩容器 --- 伸缩容器中子元素的排列方式---子元素所占空间</li>
+              <li>
+                <p><strong>伸缩布局的属性：</strong></p>
+                <ul>
+                  <li>主轴方向：flex-direction: row/row-reverse(右到左)/column/column-reverse(下到上)</li>
+                  <li>伸缩项目在主轴的对齐方式：justify-content：flex-start/flex-end/center/space-betweent/space-around</li>
+                  <li>伸缩项目是否换行：flex-wrap：nowrap／wrap</li>
+                  <li>换行后对齐方式：align-content：stretch：拉伸／flex-start/space/arountd</li>
+                  <li>不换行对齐方式：align-items：默认拉伸，值同上</li>
+                </ul> 
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p><strong>3. rem布局：</strong></p>
+            <ul>
+              <li>rem=docuement.documentElement.clientWidth*dpr/10(10是为了取整)</li>
+              <li>
+                <p><strong>赋值给html的font-size：rem</strong></p> 
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </div>
+
+  <div>
+    <p><strong>九：lib-flexible原理</strong></p>
+    <ul>
+      <li>1. window.devicePixelRatio获取设备的dpr</li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>十：px、em、rem、vh、vw、vmin、vmax</strong></p>
+    <ul>
+      <li>1. px：相对长度单位，像素px是相对于显示器屏幕分辨率而言的</li>
+      <li>2. em：相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸</li>
+      <li>3. rem：相对长度单位。r：root，相对于根元素 html 的字体的大小</li>
+      <li>
+        <p>4. vh、vw：相对于视口的高度和宽度，而不是元素的（CSS百分比是相对于包含它的最近的父元素的高度和宽度）</p>
+        <ul>
+          <li>1vh 等于 1/100的视口高度，1vw等于1/100的视口宽度</li>
+        </ul> 
+      </li>
+      <li>5. vmin和vmax：关于视口高度和宽度的两者的最小值和最大值</li>
+    </ul>
+  </div>
+  <div>
+    <p><strong>十一：display:none 与 visibility:hidden 还有 opacity:0 的区别</strong></p>
+    <ul>
+      <li>display:none: 不为被隐藏的对象保留其物理空间，即该对象在页面上彻底消失，看不见也摸不到</li>
+      <li>visibility:hidden 使对象在网页上不可见，但该对象在网页上所占的空间没有改变，看不见但摸得到</li>
+      <li>opacity:0 ： 设置为透明，</li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>十二：固定宽高／非固定宽高：水平垂直居中</strong></p>
+    <ul>
+      <li>
+        <p>固定宽高</p>
+      </li>
+      <li>
+        <p>非固定宽高</p>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>十三：box-sizing：盒模型</strong></p>
+    <ul>
+      <li>
+        <p>标准型：盒子宽度：仅仅是内容宽度：content</p>
+      </li>
+      <li>
+        <p>IE： width = content + border + padding</p>
+      </li>
+      <li>
+        <p>box-sizing：border-box（IE模型）/content-box(标准型)</p>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>十四：CSS的 reset 和 Normalize.css 区别</strong></p>
+    <ul>
+      <li><a href="https://www.cnblogs.com/webpush/p/4974063.html">可参考此链接</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>十五：清除浮动的一些方法</strong></p>
+    <ul>
+      <li>clear：both</li>
+      <li>利用伪元素：after</li>
+      <li>BFC原理</li>
+    </ul>
+  </div>  
+  <div>
+    <p><strong>十六：纯CSS创建一个三角形</strong></p>
+  </div>  
+
+  <h2 style="color: red;">JS部分</h2> 
+
+  <div>
+    <p><strong>一：JS数据类型</strong></p>
+    <ul>
+      <li>1. String： 字符串</li>
+      <li>2. Number ： 数字</li>
+      <li>3. Boolean： 布尔型</li>
+      <li>4. Undefined：未定义 </li>
+      <li>5. Null： null被当作一个空对象使用 </li>
+      <li>6. Object：对象（包括数组、{}）</li>
+    </ul>
+  </div>
+
+  <div>
+    <p><strong>二：闭包, 作用域, let, const, hoisting(提升)</strong></p> 
+  </div> 
+  
+  <div>
+    <p><strong>三：Promise链式调用</strong></p>
+  </div>   
+
+  <div>
+    <p><strong>四：null、undefined的区别</strong></p>
+    <ul>
+      <li>null: 表示空值, typeof(null) 为“object”</li>      
+      <li>undefined：未定义</li>
+      <li>
+        Object.prototype.toString.call(null)   // "[object Null]"
+        Object.prototype.toString.call(undefined)  // "[object Undefined]"
+      </li>
+    </ul>
+  </div> 
+
+  <div>
+    <p><strong>五：call、apply的区别</strong></p>
+    <ul>
+      <li>call: 第一个参数是作为函数上下文的对象，后面传入的是一个参数列表，而不是单个数组</li>      
+      <li>apply：两个参数：一个是作为函数上下文的对象，另外一个是作为函数参数组成的数组</li>
+    </ul>
+  </div> 
+
+  <div>
+    <p><strong>五：cookie、SessiongStorage、LocalStorage的区别</strong></p>
+    <ul>
+      <li>cookie: 是存储在客户端的小型文本文件，可以包含若干键值对，cookie会在每次发送HTTP请求时 附加到cookie 头字段，服务器以此得知 用户所处的状态</li>      
+      <li>SessionStorage、LocalStorage：都是webStorage，都是本地存储，不会被发送到浏览器上，只是SessionStorage，在浏览器会话结束时清空，，而LocalStorage，没有过期时间，除非手动清除</li>
+    </ul>
+  </div>   
+
+  
+
+
+<script src="../../lib/jquery-3.2.1.min.js"></script>
+<script>
+
+  var in1 = document.getElementById('in_1');
+  console.log(in1)
+  var flag = true
+  $("#dd").on('click',function(){
+    var attr = $(this).attr("for")
+    if(flag){
+      $("#"+attr).hide()
+      flag = false
+    }else {
+      $("#"+attr).show()
+      flag = true
+    }
+  })
+
+  $(".el-switch").on('click',function(){
+    var _this = $(this)
+    var flag = _this.hasClass('is-checked')
+    if(!flag){
+      _this.addClass('is-checked')
+    }else{
+      _this.removeClass('is-checked')
+    }
+  })
+
+  for(var i=0;i<5;i++){
+    (function(i){
+      setTimeout(function(){
+        console.log(i)
+      },100)
+    })(i)
+  }
+
+  for(var i=0;i<5;i++){
+    setTimeout(function () {
+      console.log(i)
+    },100)
+  }
+  for(var i=0;i<5;i++){
+    setTimeout(function () {
+      console.log(i)
+    },0)
+  }
+  for(let i=0;i<5;i++){
+    setTimeout(function () {
+      console.log(i)
+    },0)
+  }
+
+</script>
+</body>
+</html>

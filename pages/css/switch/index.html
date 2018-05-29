@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML+CSS实现开关</title>
+  <style>
+    .sw-box{
+
+    }
+    .chooseBtn{
+      box-sizing: border-box;
+      display: none;
+      background-color: rgb(19, 206, 102);
+      cursor: pointer;
+      margin: 3px 0.5ex;
+    }
+    .choose-label{
+      box-shadow: rgb(19, 206, 102) 0px 0px 0px 1px;
+      width: 40px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 20px;
+      position: relative;
+      background-color: rgb(19, 206, 102);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .choose-label:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      border-radius: 20px;
+      background-color: #fff;
+      z-index: 20;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    .chooseBtn:checked + label.choose-label {
+      background-color: rgb(255, 73, 73);
+      border-color: rgb(255, 73, 73);
+      box-shadow: rgb(255, 73, 73) 0px 0px 0px 1px;
+    }
+    .chooseBtn:checked + label.choose-label:before {
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sw-box">
+    <input type="checkbox" name="sex" id="male" class="chooseBtn">
+    <label for="male" class="choose-label"></label>
+  </div>
+</body>
+</html>

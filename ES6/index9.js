@@ -338,6 +338,15 @@ let person = PersonType.create("lisi")
 3.派生类中的方法总是会屏蔽基类的同名方法。所以，可以使用super.getAear()这样来访问基类中的方法
 */
 // ES5
+
+/**
+object.create(proto,[propertiesObject])
+proto: 新创建对象的原型对象
+propertiesObject：可选，如果没有指定为 undefined。
+                  是要添加到新创建对象的可枚举属性（即其自身定义的属性，而不是其原型链上的枚举属性）对象的属性描述符以及相应的属性名称。
+                  这些属性对应Object.defineProperties()的第二个参数
+*/
+
 function Rectangle(length, width) {
   this.length = length
   this.width = width
@@ -356,6 +365,8 @@ Square.prototype = Object.create(Rectangle.prototype, {
     configurable: true
   }
 })
+
+// 这样，Square.prototype指向了Object.create()之后的对象
 var square = new Square(3)
 console.log(square.getArea()) //9
 console.log(square instanceof Square) // true
@@ -365,6 +376,7 @@ console.log(square instanceof Rectangle)  //true
 /**
 1.extends :表明继承关系
 2. super()： 访问基类的构造器，此处，访问Rectangle的构造器
+3.静态成员：类上的方法或者属性，是类所有，而不是实例所有，调用方法：类名.静态属性或者静态方法
 */
 /**
 使用super（）

@@ -177,7 +177,7 @@ function getJSON(url,param) {
   }
   return new Promise(function (resolve,reject) {
     var req = creatReq()
-    req.open("GET",paramConcatUrl(url,param),ture). //true : async的值
+    req.open("GET",paramConcatUrl(url,param),ture) //true : async的值
     req.onreadystatechange = function () {
       if(req.readystate == 4){
         if(req.status == 200){

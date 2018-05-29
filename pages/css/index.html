@@ -52,6 +52,24 @@
       transform: translate(-50%, -50%);
       background-color: red;
     }
+
+    .triangle-new-box {
+      width: 200px;
+      height: 200px;
+      box-sizing: border-box;
+      border: 1px solid #f1f1f1;
+      position: relative;
+    }
+    .triangle-new {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(45deg, transparent 50%, #61C4CF 0%);
+      background-size: 16px 16px;
+      border-top-right-radius: 3px;
+    }
     
   </style>
 </head>
@@ -78,6 +96,12 @@
 
   <div class="box">
     <div class="tail"></div>
+  </div>
+
+
+  <div class="triangle-new-box">
+    昨日
+    <div class="triangle-new"></div>
   </div>
 
 </body>
